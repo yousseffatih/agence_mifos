@@ -1,0 +1,513 @@
+{
+    "id": 2,
+    "accountNo": "000000002",
+    "status": {
+        "id": 602,
+        "code": "loanStatusType.closed.reschedule.outstanding.amount",
+        "value": "Closed (rescheduled)",
+        "pendingApproval": false,
+        "waitingForDisbursal": false,
+        "active": false,
+        "closedObligationsMet": false,
+        "closedWrittenOff": false,
+        "closedRescheduled": true,
+        "closed": true,
+        "overpaid": false
+    },
+    
+    
+    "summary": {
+        "currency": {
+            "code": "NGN",
+            "name": "Nigerian Naira",
+            "decimalPlaces": 2,
+            "inMultiplesOf": 100,
+            "nameCode": "currency.NGN",
+            "displayLabel": "Nigerian Naira [NGN]"
+        },
+        "principalDisbursed": 100000.000000,
+        "principalPaid": 36210.000000,
+        "principalWrittenOff": 0.000000,
+        "principalOutstanding": 63790.000000,
+        "principalOverdue": 0,
+        "interestCharged": 7185.180000,
+        "interestPaid": 3750.000000,
+        "interestWaived": 0.000000,
+        "interestWrittenOff": 0.000000,
+        "interestOutstanding": 3435.180000,
+        "interestOverdue": 0,
+        "feeChargesCharged": 2000.000000,
+        "feeChargesDueAtDisbursementCharged": 2000.000000,
+        "feeChargesPaid": 2000.000000,
+        "feeChargesWaived": 0.000000,
+        "feeChargesWrittenOff": 0.000000,
+        "feeChargesOutstanding": 0.000000,
+        "feeChargesOverdue": 0,
+        "penaltyChargesCharged": 40.000000,
+        "penaltyChargesPaid": 40.000000,
+        "penaltyChargesWaived": 0.000000,
+        "penaltyChargesWrittenOff": 0.000000,
+        "penaltyChargesOutstanding": 0.000000,
+        "penaltyChargesOverdue": 0,
+        "totalExpectedRepayment": 109225.180000,
+        "totalRepayment": 42000.000000,
+        "totalExpectedCostOfLoan": 9225.180000,
+        "totalCostOfLoan": 5790.000000,
+        "totalWaived": 0.000000,
+        "totalWrittenOff": 0.000000,
+        "totalOutstanding": 67225.180000,
+        "totalOverdue": 0
+    },
+    "repaymentSchedule": {
+        "currency": {
+            "code": "NGN",
+            "name": "Nigerian Naira",
+            "decimalPlaces": 2,
+            "inMultiplesOf": 100,
+            "nameCode": "currency.NGN",
+            "displayLabel": "Nigerian Naira [NGN]"
+        },
+        "loanTermInDays": 335,
+        "totalPrincipalDisbursed": 100000.00,
+        "totalPrincipalExpected": 100000.00,
+        "totalPrincipalPaid": 36210.00,
+        "totalInterestCharged": 7185.18,
+        "totalFeeChargesCharged": 2000.00,
+        "totalPenaltyChargesCharged": 40.00,
+        "totalWaived": 0.00,
+        "totalWrittenOff": 0.00,
+        "totalRepaymentExpected": 109225.18,
+        "totalRepayment": 42000.00,
+        "totalPaidInAdvance": 21960.00,
+        "totalPaidLate": 18000.00,
+        "totalOutstanding": 67225.18,
+        "periods": [
+            {
+                "dueDate": [
+                    2020,
+                    5,
+                    1
+                ],
+                "principalDisbursed": 100000.000000,
+                "principalLoanBalanceOutstanding": 100000.000000,
+                "feeChargesDue": 2000.000000,
+                "feeChargesPaid": 2000.000000,
+                "totalOriginalDueForPeriod": 2000.000000,
+                "totalDueForPeriod": 2000.000000,
+                "totalPaidForPeriod": 2000.000000,
+                "totalActualCostOfLoanForPeriod": 2000.000000
+            },
+            {
+                "period": 1,
+                "fromDate": [
+                    2020,
+                    5,
+                    1
+                ],
+                "dueDate": [
+                    2020,
+                    6,
+                    1
+                ],
+                "obligationsMetOnDate": [
+                    2020,
+                    7,
+                    27
+                ],
+                "complete": true,
+                "daysInPeriod": 31,
+                "principalOriginalDue": 7750.000000,
+                "principalDue": 7750.000000,
+                "principalPaid": 7750.000000,
+                "principalWrittenOff": 0,
+                "principalOutstanding": 0.000000,
+                "principalLoanBalanceOutstanding": 92250.000000,
+                "interestOriginalDue": 1250.000000,
+                "interestDue": 1250.000000,
+                "interestPaid": 1250.000000,
+                "interestWaived": 0,
+                "interestWrittenOff": 0,
+                "interestOutstanding": 0.000000,
+                "feeChargesDue": 0,
+                "feeChargesPaid": 0,
+                "feeChargesWaived": 0,
+                "feeChargesWrittenOff": 0,
+                "feeChargesOutstanding": 0,
+                "penaltyChargesDue": 20.000000,
+                "penaltyChargesPaid": 20.000000,
+                "penaltyChargesWaived": 0,
+                "penaltyChargesWrittenOff": 0,
+                "penaltyChargesOutstanding": 0.000000,
+                "totalOriginalDueForPeriod": 9020.000000,
+                "totalDueForPeriod": 9020.000000,
+                "totalPaidForPeriod": 9020.000000,
+                "totalPaidInAdvanceForPeriod": 0,
+                "totalPaidLateForPeriod": 9000.000000,
+                "totalWaivedForPeriod": 0,
+                "totalWrittenOffForPeriod": 0,
+                "totalOutstandingForPeriod": 0.000000,
+                "totalOverdue": 0.000000,
+                "totalActualCostOfLoanForPeriod": 1270.000000,
+                "totalInstallmentAmountForPeriod": 9000.00
+            },
+            {
+                "period": 2,
+                "fromDate": [
+                    2020,
+                    6,
+                    1
+                ],
+                "dueDate": [
+                    2020,
+                    7,
+                    1
+                ],
+                "obligationsMetOnDate": [
+                    2020,
+                    7,
+                    27
+                ],
+                "complete": true,
+                "daysInPeriod": 30,
+                "principalOriginalDue": 7750.000000,
+                "principalDue": 7750.000000,
+                "principalPaid": 7750.000000,
+                "principalWrittenOff": 0,
+                "principalOutstanding": 0.000000,
+                "principalLoanBalanceOutstanding": 84500.000000,
+                "interestOriginalDue": 1250.000000,
+                "interestDue": 1250.000000,
+                "interestPaid": 1250.000000,
+                "interestWaived": 0,
+                "interestWrittenOff": 0,
+                "interestOutstanding": 0.000000,
+                "feeChargesDue": 0,
+                "feeChargesPaid": 0,
+                "feeChargesWaived": 0,
+                "feeChargesWrittenOff": 0,
+                "feeChargesOutstanding": 0,
+                "penaltyChargesDue": 20.000000,
+                "penaltyChargesPaid": 20.000000,
+                "penaltyChargesWaived": 0,
+                "penaltyChargesWrittenOff": 0,
+                "penaltyChargesOutstanding": 0.000000,
+                "totalOriginalDueForPeriod": 9020.000000,
+                "totalDueForPeriod": 9020.000000,
+                "totalPaidForPeriod": 9020.000000,
+                "totalPaidInAdvanceForPeriod": 0,
+                "totalPaidLateForPeriod": 9000.000000,
+                "totalWaivedForPeriod": 0,
+                "totalWrittenOffForPeriod": 0,
+                "totalOutstandingForPeriod": 0.000000,
+                "totalOverdue": 0.000000,
+                "totalActualCostOfLoanForPeriod": 1270.000000,
+                "totalInstallmentAmountForPeriod": 9000.00
+            }
+        ]
+    },
+    "transactions": [
+        {
+            "id": 10,
+            "officeId": 1,
+            "officeName": "BankHive",
+            "type": {
+                "id": 5,
+                "code": "loanTransactionType.repaymentAtDisbursement",
+                "value": "Repayment (at time of disbursement)",
+                "disbursement": false,
+                "repaymentAtDisbursement": true,
+                "repayment": false,
+                "contra": false,
+                "waiveInterest": false,
+                "waiveCharges": false,
+                "accrual": false,
+                "writeOff": false,
+                "recoveryRepayment": false,
+                "initiateTransfer": false,
+                "approveTransfer": false,
+                "withdrawTransfer": false,
+                "rejectTransfer": false,
+                "chargePayment": false,
+                "refund": false,
+                "refundForActiveLoans": false
+            },
+            "date": [
+                2020,
+                5,
+                1
+            ],
+            "currency": {
+                "code": "NGN",
+                "name": "Nigerian Naira",
+                "decimalPlaces": 2,
+                "inMultiplesOf": 100,
+                "nameCode": "currency.NGN",
+                "displayLabel": "Nigerian Naira [NGN]"
+            },
+            "amount": 2000.000000,
+            "principalPortion": 0,
+            "interestPortion": 0,
+            "feeChargesPortion": 2000.000000,
+            "penaltyChargesPortion": 0,
+            "overpaymentPortion": 0,
+            "unrecognizedIncomePortion": 0,
+            "outstandingLoanBalance": 0.000000,
+            "submittedOnDate": [
+                2020,
+                6,
+                14
+            ],
+            "manuallyReversed": false
+        },
+        {
+            "id": 11,
+            "officeId": 1,
+            "officeName": "BankHive",
+            "type": {
+                "id": 1,
+                "code": "loanTransactionType.disbursement",
+                "value": "Disbursement",
+                "disbursement": true,
+                "repaymentAtDisbursement": false,
+                "repayment": false,
+                "contra": false,
+                "waiveInterest": false,
+                "waiveCharges": false,
+                "accrual": false,
+                "writeOff": false,
+                "recoveryRepayment": false,
+                "initiateTransfer": false,
+                "approveTransfer": false,
+                "withdrawTransfer": false,
+                "rejectTransfer": false,
+                "chargePayment": false,
+                "refund": false,
+                "refundForActiveLoans": false
+            },
+            "date": [
+                2020,
+                5,
+                1
+            ],
+            "currency": {
+                "code": "NGN",
+                "name": "Nigerian Naira",
+                "decimalPlaces": 2,
+                "inMultiplesOf": 100,
+                "nameCode": "currency.NGN",
+                "displayLabel": "Nigerian Naira [NGN]"
+            },
+            "paymentDetailData": {
+                "id": 11,
+                "paymentType": {
+                    "id": 1,
+                    "name": "Money Transfer"
+                },
+                "accountNumber": "",
+                "checkNumber": "",
+                "routingCode": "",
+                "receiptNumber": "",
+                "bankNumber": ""
+            },
+            "amount": 100000.000000,
+            "principalPortion": 0,
+            "interestPortion": 0,
+            "feeChargesPortion": 0,
+            "penaltyChargesPortion": 0,
+            "overpaymentPortion": 0,
+            "unrecognizedIncomePortion": 0,
+            "outstandingLoanBalance": 100000.000000,
+            "submittedOnDate": [
+                2020,
+                6,
+                14
+            ],
+            "manuallyReversed": false
+        },
+        {
+            "id": 37,
+            "officeId": 1,
+            "officeName": "BankHive",
+            "type": {
+                "id": 10,
+                "code": "loanTransactionType.accrual",
+                "value": "Accrual",
+                "disbursement": false,
+                "repaymentAtDisbursement": false,
+                "repayment": false,
+                "contra": false,
+                "waiveInterest": false,
+                "waiveCharges": false,
+                "accrual": true,
+                "writeOff": false,
+                "recoveryRepayment": false,
+                "initiateTransfer": false,
+                "approveTransfer": false,
+                "withdrawTransfer": false,
+                "rejectTransfer": false,
+                "chargePayment": false,
+                "refund": false,
+                "refundForActiveLoans": false
+            },
+            "date": [
+                2020,
+                5,
+                1
+            ],
+            "currency": {
+                "code": "NGN",
+                "name": "Nigerian Naira",
+                "decimalPlaces": 2,
+                "inMultiplesOf": 100,
+                "nameCode": "currency.NGN",
+                "displayLabel": "Nigerian Naira [NGN]"
+            },
+            "amount": 7185.180000,
+            "principalPortion": 0,
+            "interestPortion": 7185.180000,
+            "feeChargesPortion": 0,
+            "penaltyChargesPortion": 0,
+            "overpaymentPortion": 0,
+            "unrecognizedIncomePortion": 0,
+            "outstandingLoanBalance": 0,
+            "submittedOnDate": [
+                2020,
+                7,
+                27
+            ],
+            "manuallyReversed": false
+        }
+    ],
+    "charges": [
+        {
+            "id": 1,
+            "chargeId": 1,
+            "name": "Test 1",
+            "chargeTimeType": {
+                "id": 1,
+                "code": "chargeTimeType.disbursement",
+                "value": "Disbursement"
+            },
+            "chargeCalculationType": {
+                "id": 2,
+                "code": "chargeCalculationType.percent.of.amount",
+                "value": "% Amount"
+            },
+            "percentage": 2.000000,
+            "amountPercentageAppliedTo": 100000.000000,
+            "currency": {
+                "code": "NGN",
+                "name": "Nigerian Naira",
+                "decimalPlaces": 2,
+                "nameCode": "currency.NGN",
+                "displayLabel": "Nigerian Naira [NGN]"
+            },
+            "amount": 2000.000000,
+            "amountPaid": 2000.000000,
+            "amountWaived": 0.000000,
+            "amountWrittenOff": 0.000000,
+            "amountOutstanding": 0.000000,
+            "amountOrPercentage": 2.000000,
+            "penalty": false,
+            "chargePaymentMode": {
+                "id": 0,
+                "code": "chargepaymentmode.regular",
+                "value": "Regular"
+            },
+            "paid": true,
+            "waived": false,
+            "chargePayable": false
+        },
+        {
+            "id": 5,
+            "chargeId": 4,
+            "name": "Penalty Fee",
+            "chargeTimeType": {
+                "id": 9,
+                "code": "chargeTimeType.overdueInstallment",
+                "value": "Overdue Fees"
+            },
+            "dueDate": [
+                2020,
+                6,
+                1
+            ],
+            "chargeCalculationType": {
+                "id": 1,
+                "code": "chargeCalculationType.flat",
+                "value": "Flat"
+            },
+            "percentage": 0,
+            "amountPercentageAppliedTo": 0,
+            "currency": {
+                "code": "KES",
+                "name": "Kenyan Shilling",
+                "decimalPlaces": 2,
+                "displaySymbol": "KSh",
+                "nameCode": "currency.KES",
+                "displayLabel": "Kenyan Shilling (KSh)"
+            },
+            "amount": 20.000000,
+            "amountPaid": 20.000000,
+            "amountWaived": 0,
+            "amountWrittenOff": 0,
+            "amountOutstanding": 0.000000,
+            "amountOrPercentage": 20.000000,
+            "penalty": true,
+            "chargePaymentMode": {
+                "id": 0,
+                "code": "chargepaymentmode.regular",
+                "value": "Regular"
+            },
+            "paid": true,
+            "waived": false,
+            "chargePayable": false
+        },
+        {
+            "id": 4,
+            "chargeId": 4,
+            "name": "Penalty Fee",
+            "chargeTimeType": {
+                "id": 9,
+                "code": "chargeTimeType.overdueInstallment",
+                "value": "Overdue Fees"
+            },
+            "dueDate": [
+                2020,
+                7,
+                1
+            ],
+            "chargeCalculationType": {
+                "id": 1,
+                "code": "chargeCalculationType.flat",
+                "value": "Flat"
+            },
+            "percentage": 0,
+            "amountPercentageAppliedTo": 0,
+            "currency": {
+                "code": "KES",
+                "name": "Kenyan Shilling",
+                "decimalPlaces": 2,
+                "displaySymbol": "KSh",
+                "nameCode": "currency.KES",
+                "displayLabel": "Kenyan Shilling (KSh)"
+            },
+            "amount": 20.000000,
+            "amountPaid": 20.000000,
+            "amountWaived": 0,
+            "amountWrittenOff": 0,
+            "amountOutstanding": 0.000000,
+            "amountOrPercentage": 20.000000,
+            "penalty": true,
+            "chargePaymentMode": {
+                "id": 0,
+                "code": "chargepaymentmode.regular",
+                "value": "Regular"
+            },
+            "paid": true,
+            "waived": false,
+            "chargePayable": false
+        }
+    ]
+    
+}
