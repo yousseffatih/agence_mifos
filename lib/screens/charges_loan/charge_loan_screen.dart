@@ -25,7 +25,7 @@ class ChargeLoanScreen extends GetView<ChargeLoanController> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.more_vert),
+            icon: Icon(Icons.add),
             onPressed: () {
               showCustomMenu(context,MediaQuery.of(context).size.height * 0.8,[
                 buildMenuOption(icon: Icons.info,text: "More Loan info",onTap: (){}),

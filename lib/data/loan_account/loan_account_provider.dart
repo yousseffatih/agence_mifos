@@ -26,5 +26,17 @@ class LoanAccountProvider {
     } catch (e) {
       rethrow;    
     }
+  }
+
+  Future<dynamic> getChargesTemplate(int id) async {
+    final response = await apiClient.get("/loans/$id/charges/template");
+    try{
+      if(response.statusCode == 200)
+      {
+        return response.data;
+      }
+    } catch (e) {
+      rethrow;    
+    }
   } 
 }
