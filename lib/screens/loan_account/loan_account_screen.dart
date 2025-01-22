@@ -45,7 +45,10 @@ class LoanAccountScreen extends GetView<LoanAccountController> {
                   Navigator.pop(context);
                   Get.toNamed(AppRoute.document , arguments: controller.loanAccoundId);
                 }),
-                buildMenuOption(icon: Icons.money,text: "Loan Charges",onTap: (){}),
+                buildMenuOption(icon: Icons.money,text: "Loan Charges",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.chargeLoan , arguments: controller.loanAccoundId);
+                }),
               ]);
             },
           ),
