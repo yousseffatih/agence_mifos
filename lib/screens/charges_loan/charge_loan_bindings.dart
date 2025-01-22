@@ -1,11 +1,11 @@
-import 'package:agence_mifos/screens/document_loan/document_loan_controller.dart';
+import 'package:agence_mifos/screens/charges_loan/charge_loan_controller.dart';
 import 'package:get/get.dart';
 
 import '../../data/api_client.dart';
 import '../../data/loan_account/loan_account_provider.dart';
 import '../../repository/loan_account/loan_account_repository.dart';
 
-class DocumentLoanBindings implements Bindings{
+class ChargeLoanBindings implements Bindings{
   @override
   void dependencies() {
     Get.lazyPut(() => ApiClient(), fenix: true);
@@ -24,7 +24,7 @@ class DocumentLoanBindings implements Bindings{
       fenix: true,
     );
     
-    Get.lazyPut(()=> DocumentLoanController());
+    Get.lazyPut(()=> ChargeLoanController(loanAccountRepository: Get.find<LoanAccountRepository>()));
   }
   
 }

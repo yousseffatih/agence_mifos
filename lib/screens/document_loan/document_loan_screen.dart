@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:agence_mifos/screens/document_loan/document_loan_controller.dart';
+import 'package:agence_mifos/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/action_menu/curtom_show_action_menu.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_field.dart';
 import '../../widgets/search_button.dart';
 
 class DocumentLoanScreen extends GetView<DocumentLoanController> {
@@ -14,6 +16,7 @@ class DocumentLoanScreen extends GetView<DocumentLoanController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true, // Allows the screen to adjust for the keyboard
       appBar: AppBar(
         title: Text('Documents'),
         leading: IconButton(
@@ -24,9 +27,16 @@ class DocumentLoanScreen extends GetView<DocumentLoanController> {
           IconButton(
             icon: Icon(Icons.more_vert),
             onPressed: () {
-              showCustomMenu(context,MediaQuery.of(context).size.height * 0.8,[
-                  showMenu(controller: controller),
-              ]);
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true, // Ensures the sheet can resize for the keyboard
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(16),
+                  ),
+                ),
+                builder: (_) => showMenu(controller: controller),
+              );
             },
           ),
         ],
@@ -45,86 +55,110 @@ class showMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Obx(()=> Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-        Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            "Upload Document",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            ),
-          ),
-          IconButton(
-            icon: Icon(Icons.close),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
+    return  Obx(()=> Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom, // Handles keyboard overlap
+        left: 16,
+        right: 16,
+        top: 16,
       ),
-      Row(
+      child: SingleChildScrollView(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          controller.selectedFile.value == null
-        ? Container(
-            height: 150.h,
-            width: 800.w,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.grey),
-            ),
-            child: Center(
-              child: Text(
-                'No file selected',
-                style: TextStyle(color: Colors.grey),
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Upload Document",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
-            ),
-          )
-        : Container(
-            height: 150.h,
-            width: 800.w,
-            decoration: BoxDecoration(
-              color: Colors.green.shade100,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.green),
-            ),
-            child: Center(
-              child: Text(
-                controller.selectedFile.value!.uri.pathSegments.last,
-                style: TextStyle(color: Colors.green),
+              IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
-            ),
+            ],
           ),
-          SizedBox(width: 30.w,),
-          controller.selectedFile.value == null ?
-          SearchButton(
-            icon: Icons.file_open,
-            onPressed: () async {
-              File? file = await controller.pickFile();
-              if (file != null) {
-                  controller.selectedFile.value = file;
-                  
-              }
-            },
-          )
-          :
-          SearchButton(
-            icon: Icons.close,
-            onPressed: () async {
-                controller.selectedFile.value = null;
-              }
-            
+          SizedBox(height: 50.h,),
+          CustomTextField(
+            controller: controller.nameController,
+            hintText: "Name",
+            bgColor: AppColor.grey.withOpacity(0.15),
           ),
-        ],
+          SizedBox(height: 30.h,),
+          CustomTextField(
+            controller: controller.descriptionController,
+            hintText: "Description",
+            bgColor: AppColor.grey.withOpacity(0.15),
+            maxLine: 5,
+          ),
+          SizedBox(height: 30.h,),
+          Row(
+            children: [
+              controller.selectedFile.value == null
+            ? Container(
+                height: 150.h,
+                width: 800.w,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.grey),
+                ),
+                child: Center(
+                  child: Text(
+                    'No file selected',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+              )
+            : Container(
+                height: 150.h,
+                width: 800.w,
+                decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.green),
+                ),
+                child: Center(
+                  child: Text(
+                    controller.selectedFile.value!.uri.pathSegments.last,
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              SizedBox(width: 30.w,),
+              controller.selectedFile.value == null ?
+              SearchButton(
+                icon: Icons.file_open,
+                onPressed: () async {
+                  File? file = await controller.pickFile();
+                  if (file != null) {
+                      controller.selectedFile.value = file;
+                  }
+                },
+              )
+              :
+              SearchButton(
+                icon: Icons.close,
+                onPressed: () async {
+                    controller.selectedFile.value = null;
+                  }
+                
+              ),
+            ],
+          ),
+          SizedBox(height: 100.h),
+          SizedBox(width: double.infinity,child: CustomButton(text: "Upload",onPressed: (){},)),
+          SizedBox(height: 100.h),
+        ],),
       ),
-      SizedBox(height: 20),
-                  
-    ],)
+    )
     );
   }
 }

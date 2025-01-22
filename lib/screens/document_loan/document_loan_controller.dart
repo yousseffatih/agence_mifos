@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DocumentLoanController extends GetxController{
@@ -8,6 +9,8 @@ class DocumentLoanController extends GetxController{
 
   final isTrue = true.obs;
 
+  TextEditingController nameController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
   Rx<File?> selectedFile = Rx<File?>(null);
 
   @override

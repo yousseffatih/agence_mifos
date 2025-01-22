@@ -1,6 +1,8 @@
 import 'package:agence_mifos/route/routes.dart';
 import 'package:agence_mifos/screens/center/center_bindings.dart';
 import 'package:agence_mifos/screens/center/center_screen.dart';
+import 'package:agence_mifos/screens/charges_loan/charge_loan_bindings.dart';
+import 'package:agence_mifos/screens/charges_loan/charge_loan_screen.dart';
 import 'package:agence_mifos/screens/client/client_bindings.dart';
 import 'package:agence_mifos/screens/client/client_screen.dart';
 import 'package:agence_mifos/screens/clients/clients_bindings.dart';
@@ -80,6 +82,11 @@ class AppPage {
           name: AppRoute.document,
           page: () =>  DocumentLoanScreen(),
           binding: DocumentLoanBindings()
+        ),
+    GetPage(
+          name: AppRoute.chargeLoan,
+          page: () =>  ChargeLoanScreen(),
+          binding: ChargeLoanBindings()
         ),
   ];
 }
