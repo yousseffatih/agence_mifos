@@ -1,6 +1,8 @@
+import 'package:agence_mifos/model/body/submit_charges.body.dart';
 import 'package:agence_mifos/model/charge_loan.model.dart';
 import 'package:agence_mifos/model/loan_account.model.dart';
 import 'package:agence_mifos/repository/loan_account/loan_account_repository.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../model/charge_template.model.dart';
@@ -13,28 +15,22 @@ class ChargeLoanController extends GetxController{
   final chargesLoan = <ChanrgesLoan>[].obs;
   late int idLoan ;
   final isLoading = false.obs;
+  final loadSubmit = false.obs;
   final chargesTemplate = ChargesTemplate().obs;
 
-  final charges = [
-    {
-      "clientId": 1,
-      "chargeName": "Test 1",
-      "chargeAmount": 2000.0,
-      "chargeDueDate": "No Due Date",
-    },
-    {
-      "clientId": 4,
-      "chargeName": "Penalty Fee",
-      "chargeAmount": 20.0,
-      "chargeDueDate": "2020-6-1",
-    },
-    {
-      "clientId": 4,
-      "chargeName": "Penalty Fee",
-      "chargeAmount": 20.0,
-      "chargeDueDate": "2020-7-1",
-    },
-  ].obs;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController amountController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
+  TextEditingController localController = TextEditingController();
+
+  final isTrue = true.obs;
+  final List<String> suggestions = [
+    'John Doe',
+    'Jane Smith',
+    'Robert Brown',
+    'Emily Davis',
+    'Michael Johnson',
+  ];
 
   @override
   void onInit() async {
@@ -51,7 +47,6 @@ class ChargeLoanController extends GetxController{
       print("this is the charges loan failure  :${failure.message}");
     }, (listCharges){
       chargesLoan.value = listCharges;
-      
     });
     isLoading.value = false;
   }
@@ -65,5 +60,29 @@ class ChargeLoanController extends GetxController{
       chargesTemplate.value = listCharges;
     });
     isLoading.value = false;
+  }
+
+  Future<void> submitBtn() async {
+    loadSubmit.value = true;
+    print("name : ${nameController.text}");
+    print("dueDate : ${dateController.text}");
+    print('amount : ${amountController.text}');
+    SubmitChargesBody submitChargesBody = SubmitChargesBody();
+    submitChargesBody.chargeId = int.parse(nameController.text);
+    submitChargesBody.dateFormat = "dd MMMM yyyy";
+    submitChargesBody.dueDate = dateController.text;
+    submitChargesBody.locale = "en";
+
+    loadSubmit.value = false;
+
+    final result = await loanAccountRepository.postSubmitCharges(idLoan , submitChargesBody);
+
+    result.fold((failure){
+      Get.snackbar('Error', failure.message);
+    }, (u){
+      print("this is the success $u");
+    });
+
+    loadSubmit.value = false;
   }
 }

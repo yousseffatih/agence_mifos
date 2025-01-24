@@ -1,4 +1,6 @@
 import 'package:agence_mifos/route/routes.dart';
+import 'package:agence_mifos/screens/add_loan_account/add_loan_account_bindings.dart';
+import 'package:agence_mifos/screens/add_loan_account/add_loan_account_screen.dart';
 import 'package:agence_mifos/screens/center/center_bindings.dart';
 import 'package:agence_mifos/screens/center/center_screen.dart';
 import 'package:agence_mifos/screens/charges_loan/charge_loan_bindings.dart';
@@ -87,6 +89,11 @@ class AppPage {
           name: AppRoute.chargeLoan,
           page: () =>  ChargeLoanScreen(),
           binding: ChargeLoanBindings()
+        ),
+    GetPage(
+          name: AppRoute.addLoan,
+          page: () =>  AddLoanAccountScreen(),
+          binding: AddLoanAccountBindings()
         ),
   ];
 }

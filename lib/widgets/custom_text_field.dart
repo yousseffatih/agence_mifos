@@ -1,6 +1,7 @@
 
 import 'package:agence_mifos/theme/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -38,12 +39,12 @@ class CustomTextField extends StatelessWidget {
         fillColor: bgColor,
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(24.sp),
           borderSide: BorderSide.none,
         ),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 16,
+        contentPadding:  EdgeInsets.symmetric(
+          horizontal: 35.w,
+          vertical: 35.h,
         ),
       ),
     );

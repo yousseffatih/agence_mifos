@@ -1,5 +1,7 @@
 import 'package:agence_mifos/data/api_client.dart';
 
+import '../../model/body/submit_charges.body.dart';
+
 class LoanAccountProvider {
   final ApiClient apiClient;
   LoanAccountProvider({ required this.apiClient});
@@ -38,5 +40,17 @@ class LoanAccountProvider {
     } catch (e) {
       rethrow;    
     }
-  } 
+  }
+
+  Future<dynamic> postSubmitCharge(int id,SubmitChargesBody body) async {
+    final response = await apiClient.post("/loans/$id/charges", body.toJson());
+    try{
+      if(response.statusCode == 200)
+      {
+        return response.data;
+      }
+    } catch (e) {
+      rethrow;    
+    }
+  }
 }

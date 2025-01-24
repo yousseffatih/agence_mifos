@@ -1,4 +1,5 @@
 import 'package:agence_mifos/data/loan_account/loan_account_provider.dart';
+import 'package:agence_mifos/model/body/submit_charges.body.dart';
 import 'package:agence_mifos/model/charge_loan.model.dart';
 import 'package:agence_mifos/model/charge_template.model.dart';
 import 'package:agence_mifos/model/loan_account.model.dart';
@@ -33,6 +34,26 @@ class LoanAccountRepository {
   Future<Either<Failure,ChargesTemplate>> getChargesTemplate(int id) async {
     try{
       final data = await loanAccountProvider.getChargesTemplate(id);
+        final list = ChargesTemplate.fromJson(data);
+        return Right(list);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  Future<Either<Failure,ChargesTemplate>> postChargesTemplate(int id) async {
+    try{
+      final data = await loanAccountProvider.getChargesTemplate(id);
+        final list = ChargesTemplate.fromJson(data);
+        return Right(list);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  Future<Either<Failure,ChargesTemplate>> postSubmitCharges(int id , SubmitChargesBody submitChargesBody) async {
+    try{
+      final data = await loanAccountProvider.postSubmitCharge(id,submitChargesBody);
         final list = ChargesTemplate.fromJson(data);
         return Right(list);
     } catch (e) {

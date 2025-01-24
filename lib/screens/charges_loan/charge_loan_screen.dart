@@ -7,7 +7,12 @@ import 'package:get/get.dart';
 
 import '../../widgets/action_menu/build_menu_option.dart';
 import '../../widgets/action_menu/curtom_show_action_menu.dart';
+import '../../widgets/autocomplate_textfiled.dart';
+import '../../widgets/custom_button.dart';
 import '../../widgets/custom_row_info_center.dart';
+import '../../widgets/custom_text_field.dart';
+import '../../widgets/custume_date_time_picker.dart';
+import '../../widgets/selected_textfield.dart';
 import 'charge_loan_controller.dart';
 
 class ChargeLoanScreen extends GetView<ChargeLoanController> {
@@ -27,9 +32,16 @@ class ChargeLoanScreen extends GetView<ChargeLoanController> {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              showCustomMenu(context,MediaQuery.of(context).size.height * 0.8,[
-                buildMenuOption(icon: Icons.info,text: "More Loan info",onTap: (){}),
-              ]);
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true, 
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(16),
+                  ),
+                ),
+                builder: (_) => showMenu(controller: controller),
+              );
             },
           ),
         ],
@@ -107,6 +119,85 @@ class rowCard extends StatelessWidget {
           style: const TextStyle(fontSize: 14 , fontWeight: FontWeight.bold),
         ),
       ],
+    );
+  }
+}
+
+
+class showMenu extends StatelessWidget {
+  const showMenu({
+    super.key,
+    required this.controller,
+  });
+
+  final ChargeLoanController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return  Obx(()=> controller.isTrue.value ?  Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom, // Handles keyboard overlap
+        left: 16,
+        right: 16,
+        top: 16,
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Loan Charge",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+              IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+          SizedBox(height: 50.h,),
+          SelectableTextField(
+            hint: "Name",
+            bgColor: AppColor.grey.withOpacity(0.15),
+            options: controller.chargesTemplate.value.chargeOptions!,
+            textEditingController: controller.nameController,
+          ),
+          SizedBox(height: 30.h,),
+          CustomTextField(
+            controller: controller.amountController,
+            keyboardType: TextInputType.number,
+            hintText: "Amount",
+            bgColor: AppColor.grey.withOpacity(0.15),
+          ),
+          SizedBox(height: 30.h,),
+          CustumeDateTimePicker(
+            textEditingController: controller.dateController,
+            hint: "Charge due Date",
+            bgColor: AppColor.grey.withOpacity(0.15),
+          ),
+          SizedBox(height: 30.h,),
+          CustomTextField(
+            controller: controller.localController,
+            hintText: "Locale",
+            bgColor: AppColor.grey.withOpacity(0.15),
+          ),
+          SizedBox(height: 100.h),
+          SizedBox(width: double.infinity,child: CustomButton(text: "Submit",onPressed: (){
+            controller.submitBtn();
+          },)),
+          SizedBox(height: 100.h),
+        ],),
+      ),
+    ) : Container()
     );
   }
 }
