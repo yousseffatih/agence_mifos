@@ -11,4 +11,5 @@ class AppRoute {
   static const repayemntSch = "/repayementSch";
   static const document = "/document";
   static const chargeLoan = "/chargeLoan";
+  static const addLoan = "/addLoan";
 }

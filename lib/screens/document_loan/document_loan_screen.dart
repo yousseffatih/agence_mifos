@@ -25,7 +25,7 @@ class DocumentLoanScreen extends GetView<DocumentLoanController> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.more_vert),
+            icon: Icon(Icons.add),
             onPressed: () {
               showModalBottomSheet(
                 context: context,

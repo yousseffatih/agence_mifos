@@ -9,14 +9,27 @@ ChargesTemplate chargesTemplateFromJson(String str) => ChargesTemplate.fromJson(
 String chargesTemplateToJson(ChargesTemplate data) => json.encode(data.toJson());
 
 class ChargesTemplate {
-    int? amountPaid;
-    int? amountWaived;
-    int? amountWrittenOff;
+    double? amountPaid;
+    double? amountWaived;
+    double? amountWrittenOff;
     List<ChargeOption>? chargeOptions;
     bool? penalty;
     bool? paid;
     bool? waived;
     bool? chargePayable;
+
+    static double _toDouble(dynamic value) {
+    if (value == null) {
+      return 0.0;
+    }
+    if (value is int) {
+      return value.toDouble();
+    }
+    if (value is double) {
+      return value;
+    }
+    return 0.0;
+  }
 
     ChargesTemplate({
         this.amountPaid,
@@ -30,9 +43,9 @@ class ChargesTemplate {
     });
 
     factory ChargesTemplate.fromJson(Map<String, dynamic> json) => ChargesTemplate(
-        amountPaid: json["amountPaid"],
-        amountWaived: json["amountWaived"],
-        amountWrittenOff: json["amountWrittenOff"],
+        amountPaid: _toDouble(json["amountPaid"]),
+        amountWaived: _toDouble(json["amountWaived"]),
+        amountWrittenOff: _toDouble(json["amountWrittenOff"]),
         chargeOptions: json["chargeOptions"] == null ? [] : List<ChargeOption>.from(json["chargeOptions"]!.map((x) => ChargeOption.fromJson(x))),
         penalty: json["penalty"],
         paid: json["paid"],
@@ -58,7 +71,7 @@ class ChargeOption {
     bool? active;
     bool? penalty;
     Currency? currency;
-    int? amount;
+    double? amount;
     Charge? chargeTimeType;
     Charge? chargeAppliesTo;
     Charge? chargeCalculationType;
@@ -77,17 +90,50 @@ class ChargeOption {
         this.chargePaymentMode,
     });
 
+    static double _toDouble(dynamic value) {
+    if (value == null) {
+      return 0.0;
+    }
+    if (value is int) {
+      return value.toDouble();
+    }
+    if (value is double) {
+      return value;
+    }
+    return 0.0;
+  }
+
     factory ChargeOption.fromJson(Map<String, dynamic> json) => ChargeOption(
         id: json["id"],
         name: json["name"],
         active: json["active"],
         penalty: json["penalty"],
         currency: json["currency"] == null ? null : Currency.fromJson(json["currency"]),
-        amount: json["amount"],
+        amount: _toDouble(json["amount"]),
         chargeTimeType: json["chargeTimeType"] == null ? null : Charge.fromJson(json["chargeTimeType"]),
         chargeAppliesTo: json["chargeAppliesTo"] == null ? null : Charge.fromJson(json["chargeAppliesTo"]),
         chargeCalculationType: json["chargeCalculationType"] == null ? null : Charge.fromJson(json["chargeCalculationType"]),
         chargePaymentMode: json["chargePaymentMode"] == null ? null : Charge.fromJson(json["chargePaymentMode"]),
+    );
+
+    factory ChargeOption.fromJsonCheck(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["name"],
+    );
+
+    factory ChargeOption.fromJsonCheckDiplayName(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["displayName"],
+    );
+
+    factory ChargeOption.fromJsonCheckProdactName(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["productName"],
+    );
+
+    factory ChargeOption.fromJsonCheckValue(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["value"],
     );
 
     Map<String, dynamic> toJson() => {

@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../global/app_text_style.dart';
+import '../../widgets/custum_check_box.dart';
 import '../../widgets/loading_list.dart';
 import '../../widgets/search_button.dart';
 import '../groups/groups_screen.dart';
@@ -79,27 +80,14 @@ class SearchScreen extends GetView<SearchControle> {
                   ],
                 ).paddingAll(20.sp),
                 Obx(() =>
-                CheckboxListTile(
+                CustumeCheckBox(
                   value: controller.isChecked.value,
-                  onChanged: (bool? value) async {
-                      controller.isChecked.value = value ?? false;
-                      controller.searchBtn();
-                    },
-                  title: Text(
-                    'Exact Match',
-                    style: TextStyle(
-                      fontSize: 45.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColor.black,
-                    ),
-                  ),
-                  controlAffinity: ListTileControlAffinity.leading,
-                  activeColor: AppColor.primaryColor,
-                  checkColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                ),),
+                  hint: "Extract Match",
+                  onChange: (bool? value) async {
+                    controller.isChecked.value = value ?? false;
+                    controller.searchBtn();
+                  },
+                  )),
               ],
             )
             ),
@@ -201,6 +189,7 @@ class SearchScreen extends GetView<SearchControle> {
         ));
   }
 }
+
 
 
 
