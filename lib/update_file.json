@@ -1,513 +1,542 @@
 {
-    "id": 2,
-    "accountNo": "000000002",
-    "status": {
-        "id": 602,
-        "code": "loanStatusType.closed.reschedule.outstanding.amount",
-        "value": "Closed (rescheduled)",
-        "pendingApproval": false,
-        "waitingForDisbursal": false,
-        "active": false,
-        "closedObligationsMet": false,
-        "closedWrittenOff": false,
-        "closedRescheduled": true,
-        "closed": true,
-        "overpaid": false
+    "clientId": 1,
+    "clientAccountNo": "000000001",
+    "clientName": "Jean aquilas",
+    "clientOfficeId": 1,
+    "loanProductId": 21,
+    "loanProductName": "I0S product",
+    "isLoanProductLinkedToFloatingRate": false,
+    "currency": {
+        "code": "INR",
+        "name": "Indian Rupee",
+        "decimalPlaces": 2,
+        "inMultiplesOf": 0,
+        "displaySymbol": "₹",
+        "nameCode": "currency.INR",
+        "displayLabel": "Indian Rupee (₹)"
     },
-    
-    
-    "summary": {
-        "currency": {
-            "code": "NGN",
-            "name": "Nigerian Naira",
-            "decimalPlaces": 2,
-            "inMultiplesOf": 100,
-            "nameCode": "currency.NGN",
-            "displayLabel": "Nigerian Naira [NGN]"
-        },
-        "principalDisbursed": 100000.000000,
-        "principalPaid": 36210.000000,
-        "principalWrittenOff": 0.000000,
-        "principalOutstanding": 63790.000000,
-        "principalOverdue": 0,
-        "interestCharged": 7185.180000,
-        "interestPaid": 3750.000000,
-        "interestWaived": 0.000000,
-        "interestWrittenOff": 0.000000,
-        "interestOutstanding": 3435.180000,
-        "interestOverdue": 0,
-        "feeChargesCharged": 2000.000000,
-        "feeChargesDueAtDisbursementCharged": 2000.000000,
-        "feeChargesPaid": 2000.000000,
-        "feeChargesWaived": 0.000000,
-        "feeChargesWrittenOff": 0.000000,
-        "feeChargesOutstanding": 0.000000,
-        "feeChargesOverdue": 0,
-        "penaltyChargesCharged": 40.000000,
-        "penaltyChargesPaid": 40.000000,
-        "penaltyChargesWaived": 0.000000,
-        "penaltyChargesWrittenOff": 0.000000,
-        "penaltyChargesOutstanding": 0.000000,
-        "penaltyChargesOverdue": 0,
-        "totalExpectedRepayment": 109225.180000,
-        "totalRepayment": 42000.000000,
-        "totalExpectedCostOfLoan": 9225.180000,
-        "totalCostOfLoan": 5790.000000,
-        "totalWaived": 0.000000,
-        "totalWrittenOff": 0.000000,
-        "totalOutstanding": 67225.180000,
-        "totalOverdue": 0
+    "principal": 10000.000000,
+    "approvedPrincipal": 10000.000000,
+    "proposedPrincipal": 10000.000000,
+    "termFrequency": 20,
+    "termPeriodFrequencyType": {
+        "id": 0,
+        "code": "repaymentFrequency.periodFrequencyType.days",
+        "value": "Days"
     },
-    "repaymentSchedule": {
-        "currency": {
-            "code": "NGN",
-            "name": "Nigerian Naira",
-            "decimalPlaces": 2,
-            "inMultiplesOf": 100,
-            "nameCode": "currency.NGN",
-            "displayLabel": "Nigerian Naira [NGN]"
-        },
-        "loanTermInDays": 335,
-        "totalPrincipalDisbursed": 100000.00,
-        "totalPrincipalExpected": 100000.00,
-        "totalPrincipalPaid": 36210.00,
-        "totalInterestCharged": 7185.18,
-        "totalFeeChargesCharged": 2000.00,
-        "totalPenaltyChargesCharged": 40.00,
-        "totalWaived": 0.00,
-        "totalWrittenOff": 0.00,
-        "totalRepaymentExpected": 109225.18,
-        "totalRepayment": 42000.00,
-        "totalPaidInAdvance": 21960.00,
-        "totalPaidLate": 18000.00,
-        "totalOutstanding": 67225.18,
-        "periods": [
-            {
-                "dueDate": [
-                    2020,
-                    5,
-                    1
-                ],
-                "principalDisbursed": 100000.000000,
-                "principalLoanBalanceOutstanding": 100000.000000,
-                "feeChargesDue": 2000.000000,
-                "feeChargesPaid": 2000.000000,
-                "totalOriginalDueForPeriod": 2000.000000,
-                "totalDueForPeriod": 2000.000000,
-                "totalPaidForPeriod": 2000.000000,
-                "totalActualCostOfLoanForPeriod": 2000.000000
-            },
-            {
-                "period": 1,
-                "fromDate": [
-                    2020,
-                    5,
-                    1
-                ],
-                "dueDate": [
-                    2020,
-                    6,
-                    1
-                ],
-                "obligationsMetOnDate": [
-                    2020,
-                    7,
-                    27
-                ],
-                "complete": true,
-                "daysInPeriod": 31,
-                "principalOriginalDue": 7750.000000,
-                "principalDue": 7750.000000,
-                "principalPaid": 7750.000000,
-                "principalWrittenOff": 0,
-                "principalOutstanding": 0.000000,
-                "principalLoanBalanceOutstanding": 92250.000000,
-                "interestOriginalDue": 1250.000000,
-                "interestDue": 1250.000000,
-                "interestPaid": 1250.000000,
-                "interestWaived": 0,
-                "interestWrittenOff": 0,
-                "interestOutstanding": 0.000000,
-                "feeChargesDue": 0,
-                "feeChargesPaid": 0,
-                "feeChargesWaived": 0,
-                "feeChargesWrittenOff": 0,
-                "feeChargesOutstanding": 0,
-                "penaltyChargesDue": 20.000000,
-                "penaltyChargesPaid": 20.000000,
-                "penaltyChargesWaived": 0,
-                "penaltyChargesWrittenOff": 0,
-                "penaltyChargesOutstanding": 0.000000,
-                "totalOriginalDueForPeriod": 9020.000000,
-                "totalDueForPeriod": 9020.000000,
-                "totalPaidForPeriod": 9020.000000,
-                "totalPaidInAdvanceForPeriod": 0,
-                "totalPaidLateForPeriod": 9000.000000,
-                "totalWaivedForPeriod": 0,
-                "totalWrittenOffForPeriod": 0,
-                "totalOutstandingForPeriod": 0.000000,
-                "totalOverdue": 0.000000,
-                "totalActualCostOfLoanForPeriod": 1270.000000,
-                "totalInstallmentAmountForPeriod": 9000.00
-            },
-            {
-                "period": 2,
-                "fromDate": [
-                    2020,
-                    6,
-                    1
-                ],
-                "dueDate": [
-                    2020,
-                    7,
-                    1
-                ],
-                "obligationsMetOnDate": [
-                    2020,
-                    7,
-                    27
-                ],
-                "complete": true,
-                "daysInPeriod": 30,
-                "principalOriginalDue": 7750.000000,
-                "principalDue": 7750.000000,
-                "principalPaid": 7750.000000,
-                "principalWrittenOff": 0,
-                "principalOutstanding": 0.000000,
-                "principalLoanBalanceOutstanding": 84500.000000,
-                "interestOriginalDue": 1250.000000,
-                "interestDue": 1250.000000,
-                "interestPaid": 1250.000000,
-                "interestWaived": 0,
-                "interestWrittenOff": 0,
-                "interestOutstanding": 0.000000,
-                "feeChargesDue": 0,
-                "feeChargesPaid": 0,
-                "feeChargesWaived": 0,
-                "feeChargesWrittenOff": 0,
-                "feeChargesOutstanding": 0,
-                "penaltyChargesDue": 20.000000,
-                "penaltyChargesPaid": 20.000000,
-                "penaltyChargesWaived": 0,
-                "penaltyChargesWrittenOff": 0,
-                "penaltyChargesOutstanding": 0.000000,
-                "totalOriginalDueForPeriod": 9020.000000,
-                "totalDueForPeriod": 9020.000000,
-                "totalPaidForPeriod": 9020.000000,
-                "totalPaidInAdvanceForPeriod": 0,
-                "totalPaidLateForPeriod": 9000.000000,
-                "totalWaivedForPeriod": 0,
-                "totalWrittenOffForPeriod": 0,
-                "totalOutstandingForPeriod": 0.000000,
-                "totalOverdue": 0.000000,
-                "totalActualCostOfLoanForPeriod": 1270.000000,
-                "totalInstallmentAmountForPeriod": 9000.00
-            }
+    "numberOfRepayments": 10,
+    "repaymentEvery": 2,
+    "repaymentFrequencyType": {
+        "id": 0,
+        "code": "repaymentFrequency.periodFrequencyType.days",
+        "value": "Days"
+    },
+    "interestRatePerPeriod": 5.000000,
+    "interestRateFrequencyType": {
+        "id": 2,
+        "code": "interestRateFrequency.periodFrequencyType.months",
+        "value": "Per month"
+    },
+    "annualInterestRate": 60.000000,
+    "isFloatingInterestRate": false,
+    "amortizationType": {
+        "id": 1,
+        "code": "amortizationType.equal.installments",
+        "value": "Equal installments"
+    },
+    "interestType": {
+        "id": 0,
+        "code": "interestType.declining.balance",
+        "value": "Declining Balance"
+    },
+    "interestCalculationPeriodType": {
+        "id": 1,
+        "code": "interestCalculationPeriodType.same.as.repayment.period",
+        "value": "Same as repayment period"
+    },
+    "allowPartialPeriodInterestCalcualtion": true,
+    "transactionProcessingStrategyId": 1,
+    "timeline": {
+        "expectedDisbursementDate": [
+            2025,
+            1,
+            27
         ]
     },
-    "transactions": [
-        {
-            "id": 10,
-            "officeId": 1,
-            "officeName": "BankHive",
-            "type": {
-                "id": 5,
-                "code": "loanTransactionType.repaymentAtDisbursement",
-                "value": "Repayment (at time of disbursement)",
-                "disbursement": false,
-                "repaymentAtDisbursement": true,
-                "repayment": false,
-                "contra": false,
-                "waiveInterest": false,
-                "waiveCharges": false,
-                "accrual": false,
-                "writeOff": false,
-                "recoveryRepayment": false,
-                "initiateTransfer": false,
-                "approveTransfer": false,
-                "withdrawTransfer": false,
-                "rejectTransfer": false,
-                "chargePayment": false,
-                "refund": false,
-                "refundForActiveLoans": false
-            },
-            "date": [
-                2020,
-                5,
-                1
-            ],
-            "currency": {
-                "code": "NGN",
-                "name": "Nigerian Naira",
-                "decimalPlaces": 2,
-                "inMultiplesOf": 100,
-                "nameCode": "currency.NGN",
-                "displayLabel": "Nigerian Naira [NGN]"
-            },
-            "amount": 2000.000000,
-            "principalPortion": 0,
-            "interestPortion": 0,
-            "feeChargesPortion": 2000.000000,
-            "penaltyChargesPortion": 0,
-            "overpaymentPortion": 0,
-            "unrecognizedIncomePortion": 0,
-            "outstandingLoanBalance": 0.000000,
-            "submittedOnDate": [
-                2020,
-                6,
-                14
-            ],
-            "manuallyReversed": false
-        },
-        {
-            "id": 11,
-            "officeId": 1,
-            "officeName": "BankHive",
-            "type": {
-                "id": 1,
-                "code": "loanTransactionType.disbursement",
-                "value": "Disbursement",
-                "disbursement": true,
-                "repaymentAtDisbursement": false,
-                "repayment": false,
-                "contra": false,
-                "waiveInterest": false,
-                "waiveCharges": false,
-                "accrual": false,
-                "writeOff": false,
-                "recoveryRepayment": false,
-                "initiateTransfer": false,
-                "approveTransfer": false,
-                "withdrawTransfer": false,
-                "rejectTransfer": false,
-                "chargePayment": false,
-                "refund": false,
-                "refundForActiveLoans": false
-            },
-            "date": [
-                2020,
-                5,
-                1
-            ],
-            "currency": {
-                "code": "NGN",
-                "name": "Nigerian Naira",
-                "decimalPlaces": 2,
-                "inMultiplesOf": 100,
-                "nameCode": "currency.NGN",
-                "displayLabel": "Nigerian Naira [NGN]"
-            },
-            "paymentDetailData": {
-                "id": 11,
-                "paymentType": {
-                    "id": 1,
-                    "name": "Money Transfer"
-                },
-                "accountNumber": "",
-                "checkNumber": "",
-                "routingCode": "",
-                "receiptNumber": "",
-                "bankNumber": ""
-            },
-            "amount": 100000.000000,
-            "principalPortion": 0,
-            "interestPortion": 0,
-            "feeChargesPortion": 0,
-            "penaltyChargesPortion": 0,
-            "overpaymentPortion": 0,
-            "unrecognizedIncomePortion": 0,
-            "outstandingLoanBalance": 100000.000000,
-            "submittedOnDate": [
-                2020,
-                6,
-                14
-            ],
-            "manuallyReversed": false
-        },
-        {
-            "id": 37,
-            "officeId": 1,
-            "officeName": "BankHive",
-            "type": {
-                "id": 10,
-                "code": "loanTransactionType.accrual",
-                "value": "Accrual",
-                "disbursement": false,
-                "repaymentAtDisbursement": false,
-                "repayment": false,
-                "contra": false,
-                "waiveInterest": false,
-                "waiveCharges": false,
-                "accrual": true,
-                "writeOff": false,
-                "recoveryRepayment": false,
-                "initiateTransfer": false,
-                "approveTransfer": false,
-                "withdrawTransfer": false,
-                "rejectTransfer": false,
-                "chargePayment": false,
-                "refund": false,
-                "refundForActiveLoans": false
-            },
-            "date": [
-                2020,
-                5,
-                1
-            ],
-            "currency": {
-                "code": "NGN",
-                "name": "Nigerian Naira",
-                "decimalPlaces": 2,
-                "inMultiplesOf": 100,
-                "nameCode": "currency.NGN",
-                "displayLabel": "Nigerian Naira [NGN]"
-            },
-            "amount": 7185.180000,
-            "principalPortion": 0,
-            "interestPortion": 7185.180000,
-            "feeChargesPortion": 0,
-            "penaltyChargesPortion": 0,
-            "overpaymentPortion": 0,
-            "unrecognizedIncomePortion": 0,
-            "outstandingLoanBalance": 0,
-            "submittedOnDate": [
-                2020,
-                7,
-                27
-            ],
-            "manuallyReversed": false
-        }
-    ],
-    "charges": [
+    "charges": [],
+    "productOptions": [
         {
             "id": 1,
-            "chargeId": 1,
-            "name": "Test 1",
-            "chargeTimeType": {
-                "id": 1,
-                "code": "chargeTimeType.disbursement",
-                "value": "Disbursement"
-            },
-            "chargeCalculationType": {
-                "id": 2,
-                "code": "chargeCalculationType.percent.of.amount",
-                "value": "% Amount"
-            },
-            "percentage": 2.000000,
-            "amountPercentageAppliedTo": 100000.000000,
-            "currency": {
-                "code": "NGN",
-                "name": "Nigerian Naira",
-                "decimalPlaces": 2,
-                "nameCode": "currency.NGN",
-                "displayLabel": "Nigerian Naira [NGN]"
-            },
-            "amount": 2000.000000,
-            "amountPaid": 2000.000000,
-            "amountWaived": 0.000000,
-            "amountWrittenOff": 0.000000,
-            "amountOutstanding": 0.000000,
-            "amountOrPercentage": 2.000000,
-            "penalty": false,
-            "chargePaymentMode": {
-                "id": 0,
-                "code": "chargepaymentmode.regular",
-                "value": "Regular"
-            },
-            "paid": true,
-            "waived": false,
-            "chargePayable": false
-        },
-        {
-            "id": 5,
-            "chargeId": 4,
-            "name": "Penalty Fee",
-            "chargeTimeType": {
-                "id": 9,
-                "code": "chargeTimeType.overdueInstallment",
-                "value": "Overdue Fees"
-            },
-            "dueDate": [
-                2020,
-                6,
-                1
-            ],
-            "chargeCalculationType": {
-                "id": 1,
-                "code": "chargeCalculationType.flat",
-                "value": "Flat"
-            },
-            "percentage": 0,
-            "amountPercentageAppliedTo": 0,
-            "currency": {
-                "code": "KES",
-                "name": "Kenyan Shilling",
-                "decimalPlaces": 2,
-                "displaySymbol": "KSh",
-                "nameCode": "currency.KES",
-                "displayLabel": "Kenyan Shilling (KSh)"
-            },
-            "amount": 20.000000,
-            "amountPaid": 20.000000,
-            "amountWaived": 0,
-            "amountWrittenOff": 0,
-            "amountOutstanding": 0.000000,
-            "amountOrPercentage": 20.000000,
-            "penalty": true,
-            "chargePaymentMode": {
-                "id": 0,
-                "code": "chargepaymentmode.regular",
-                "value": "Regular"
-            },
-            "paid": true,
-            "waived": false,
-            "chargePayable": false
-        },
-        {
-            "id": 4,
-            "chargeId": 4,
-            "name": "Penalty Fee",
-            "chargeTimeType": {
-                "id": 9,
-                "code": "chargeTimeType.overdueInstallment",
-                "value": "Overdue Fees"
-            },
-            "dueDate": [
-                2020,
-                7,
-                1
-            ],
-            "chargeCalculationType": {
-                "id": 1,
-                "code": "chargeCalculationType.flat",
-                "value": "Flat"
-            },
-            "percentage": 0,
-            "amountPercentageAppliedTo": 0,
-            "currency": {
-                "code": "KES",
-                "name": "Kenyan Shilling",
-                "decimalPlaces": 2,
-                "displaySymbol": "KSh",
-                "nameCode": "currency.KES",
-                "displayLabel": "Kenyan Shilling (KSh)"
-            },
-            "amount": 20.000000,
-            "amountPaid": 20.000000,
-            "amountWaived": 0,
-            "amountWrittenOff": 0,
-            "amountOutstanding": 0.000000,
-            "amountOrPercentage": 20.000000,
-            "penalty": true,
-            "chargePaymentMode": {
-                "id": 0,
-                "code": "chargepaymentmode.regular",
-                "value": "Regular"
-            },
-            "paid": true,
-            "waived": false,
-            "chargePayable": false
+            "name": "sssss",
+            "includeInBorrowerCycle": false,
+            "useBorrowerCycle": false,
+            "isLinkedToFloatingInterestRates": false,
+            "isFloatingInterestRateCalculationAllowed": false,
+            "allowVariableInstallments": false,
+            "isInterestRecalculationEnabled": false,
+            "canDefineInstallmentAmount": false,
+            "principalVariationsForBorrowerCycle": [],
+            "interestRateVariationsForBorrowerCycle": [],
+            "numberOfRepaymentVariationsForBorrowerCycle": [],
+            "canUseForTopup": false,
+            "isRatesEnabled": false,
+            "multiDisburseLoan": false,
+            "holdGuaranteeFunds": false,
+            "accountMovesOutOfNPAOnlyOnArrearsCompletion": false,
+            "syncExpectedWithDisbursementDate": false,
+            "isEqualAmortization": false
         }
-    ]
-    
+    ],
+    "loanOfficerOptions": [
+        {
+            "id": 118,
+            "firstname": "Fad",
+            "lastname": "Finance",
+            "displayName": "Finance, Fad",
+            "officeId": 1,
+            "officeName": "BEREBIN",
+            "isLoanOfficer": true,
+            "isActive": true,
+            "joiningDate": [
+                2025,
+                1,
+                17
+            ]
+        },
+        {
+            "id": 23,
+            "firstname": "Michelle",
+            "lastname": "Guerrero",
+            "displayName": "Guerrero, Michelle",
+            "mobileNo": "123456789",
+            "officeId": 1,
+            "officeName": "BEREBIN",
+            "isLoanOfficer": true,
+            "isActive": true,
+            "joiningDate": [
+                2021,
+                3,
+                1
+            ]
+        }
+    ],
+    "loanPurposeOptions": [
+        {
+            "id": 50,
+            "name": "Buying Car",
+            "position": 0,
+            "description": "Buying Car",
+            "active": true,
+            "mandatory": false
+        },
+        {
+            "id": 51,
+            "name": "Buying House",
+            "position": 1,
+            "description": "Buying House",
+            "active": true,
+            "mandatory": false
+        },
+        {
+            "id": 111,
+            "name": "Run Small Business",
+            "position": 3,
+            "description": "",
+            "active": true,
+            "mandatory": false
+        }
+    ],
+    "fundOptions": [
+        {
+            "id": 1617,
+            "name":"e86t9",
+            "externalId": "10000"
+        }
+    ],
+    "termFrequencyTypeOptions": [
+        {
+            "id": 0,
+            "code": "loanTermFrequency.periodFrequencyType.days",
+            "value": "Days"
+        }
+    ],
+    "repaymentFrequencyTypeOptions": [
+        {
+            "id": 0,
+            "code": "repaymentFrequency.periodFrequencyType.days",
+            "value": "Days"
+        }
+    ],
+    "repaymentFrequencyNthDayTypeOptions": [
+        {
+            "id": 1,
+            "code": "repaymentFrequency.nthDayType.one",
+            "value": "first"
+        }
+    ],
+    "repaymentFrequencyDaysOfWeekTypeOptions": [
+        {
+            "id": 7,
+            "code": "repaymentFrequency.weekDayType.sunday",
+            "value": "SUNDAY"
+        }
+    ],
+    "interestRateFrequencyTypeOptions": [
+        {
+            "id": 2,
+            "code": "interestRateFrequency.periodFrequencyType.months",
+            "value": "Per month"
+        }
+    ],
+    "amortizationTypeOptions": [
+        {
+            "id": 1,
+            "code": "amortizationType.equal.installments",
+            "value": "Equal installments"
+        }
+    ],
+    "interestTypeOptions": [
+        {
+            "id": 1,
+            "code": "interestType.flat",
+            "value": "Flat"
+        }
+    ],
+    "interestCalculationPeriodTypeOptions": [
+        {
+            "id": 0,
+            "code": "interestCalculationPeriodType.daily",
+            "value": "Daily"
+        }
+    ],
+    "transactionProcessingStrategyOptions": [
+        {
+            "id": 1,
+            "code": "mifos-standard-strategy",
+            "name": "Penalties, Fees, Interest, Principal order"
+        }
+    ],
+    "chargeOptions": [
+        {
+            "id": 77,
+            "name": "abhishek chakravarty",
+            "active": true,
+            "penalty": false,
+            "currency": {
+                "code": "INR",
+                "name": "Indian Rupee",
+                "decimalPlaces": 2,
+                "displaySymbol": "?",
+                "nameCode": "currency.INR",
+                "displayLabel": "Indian Rupee (?)"
+            },
+            "amount": 50000.000000,
+            "chargeTimeType": {
+                "id": 8,
+                "code": "chargeTimeType.instalmentFee",
+                "value": "Installment Fee"
+            },
+            "chargeAppliesTo": {
+                "id": 1,
+                "code": "chargeAppliesTo.loan",
+                "value": "Loan"
+            },
+            "chargeCalculationType": {
+                "id": 4,
+                "code": "chargeCalculationType.percent.of.interest",
+                "value": "% Interest"
+            },
+            "chargePaymentMode": {
+                "id": 0,
+                "code": "chargepaymentmode.regular",
+                "value": "Regular"
+            },
+            "taxGroup": {
+                "id": 3,
+                "name": "interestLoanTaxGroup"
+            }
+        }
+    ],
+    "loanCollateralOptions": [
+        {
+            "id": 61,
+            "name": "gold",
+            "position": 1,
+            "description": "",
+            "active": true,
+            "mandatory": false
+        }
+    ],
+    "accountLinkingOptions": [
+        {
+            "id": 11,
+            "accountNo": "000000011",
+            "clientId": 1,
+            "clientName": "Jean aquilas",
+            "productId": 6,
+            "productName": "Savings Demo",
+            "fieldOfficerId": 0,
+            "currency": {
+                "code": "INR",
+                "name": "Indian Rupee",
+                "decimalPlaces": 2,
+                "inMultiplesOf": 1,
+                "displaySymbol": "₹",
+                "nameCode": "currency.INR",
+                "displayLabel": "Indian Rupee (₹)"
+            }
+        }
+    ],
+    "multiDisburseLoan": false,
+    "canDefineInstallmentAmount": true,
+    "canDisburse": false,
+    "clientActiveLoanOptions": [
+        {
+            "id": 56,
+            "accountNo": "IOS000000056",
+            "productId": 45,
+            "productName": "IOS Loan",
+            "shortProductName": "IOS",
+            "status": {
+                "id": 300,
+                "code": "loanStatusType.active",
+                "value": "Active",
+                "pendingApproval": false,
+                "waitingForDisbursal": false,
+                "active": true,
+                "closedObligationsMet": false,
+                "closedWrittenOff": false,
+                "closedRescheduled": false,
+                "closed": false,
+                "overpaid": false
+            },
+            "loanType": {
+                "id": 1,
+                "code": "accountType.individual",
+                "value": "Individual"
+            },
+            "loanCycle": 1,
+            "timeline": {
+                "submittedOnDate": [
+                    2021,
+                    10,
+                    6
+                ],
+                "submittedByUsername": "mifos",
+                "submittedByFirstname": "App",
+                "submittedByLastname": "Administrator",
+                "approvedOnDate": [
+                    2021,
+                    10,
+                    7
+                ],
+                "approvedByUsername": "mifos",
+                "approvedByFirstname": "App",
+                "approvedByLastname": "Administrator",
+                "expectedDisbursementDate": [
+                    2021,
+                    10,
+                    7
+                ],
+                "actualDisbursementDate": [
+                    2021,
+                    10,
+                    8
+                ],
+                "disbursedByUsername": "mifos",
+                "disbursedByFirstname": "App",
+                "disbursedByLastname": "Administrator",
+                "expectedMaturityDate": [
+                    2029,
+                    4,
+                    8
+                ]
+            },
+            "inArrears": true,
+            "originalLoan": 100000.000000,
+            "loanBalance": 150468.200000
+        },
+        {
+            "id": 57,
+            "accountNo": "tm2000000057",
+            "productId": 48,
+            "productName": "testmartin",
+            "shortProductName": "tm2",
+            "status": {
+                "id": 300,
+                "code": "loanStatusType.active",
+                "value": "Active",
+                "pendingApproval": false,
+                "waitingForDisbursal": false,
+                "active": true,
+                "closedObligationsMet": false,
+                "closedWrittenOff": false,
+                "closedRescheduled": false,
+                "closed": false,
+                "overpaid": false
+            },
+            "loanType": {
+                "id": 1,
+                "code": "accountType.individual",
+                "value": "Individual"
+            },
+            "loanCycle": 1,
+            "timeline": {
+                "submittedOnDate": [
+                    2021,
+                    10,
+                    7
+                ],
+                "submittedByUsername": "mifos",
+                "submittedByFirstname": "App",
+                "submittedByLastname": "Administrator",
+                "approvedOnDate": [
+                    2021,
+                    10,
+                    7
+                ],
+                "approvedByUsername": "mifos",
+                "approvedByFirstname": "App",
+                "approvedByLastname": "Administrator",
+                "expectedDisbursementDate": [
+                    2021,
+                    10,
+                    7
+                ],
+                "actualDisbursementDate": [
+                    2021,
+                    10,
+                    7
+                ],
+                "disbursedByUsername": "mifos",
+                "disbursedByFirstname": "App",
+                "disbursedByLastname": "Administrator",
+                "expectedMaturityDate": [
+                    2022,
+                    12,
+                    7
+                ]
+            },
+            "inArrears": false,
+            "originalLoan": 10000.000000,
+            "loanBalance": 10093.060000
+        }
+    ],
+    "canUseForTopup": true,
+    "isTopup": false,
+    "product": {
+        "id": 21,
+        "name": "I0S product",
+        "shortName": "I0SP",
+        "includeInBorrowerCycle": false,
+        "useBorrowerCycle": false,
+        "status": "loanProduct.active",
+        "currency": {
+            "code": "INR",
+            "name": "Indian Rupee",
+            "decimalPlaces": 2,
+            "inMultiplesOf": 0,
+            "displaySymbol": "₹",
+            "nameCode": "currency.INR",
+            "displayLabel": "Indian Rupee (₹)"
+        },
+        "principal": 10000.000000,
+        "numberOfRepayments": 10,
+        "repaymentEvery": 2,
+        "repaymentFrequencyType": {
+            "id": 0,
+            "code": "repaymentFrequency.periodFrequencyType.days",
+            "value": "Days"
+        },
+        "interestRatePerPeriod": 5.000000,
+        "interestRateFrequencyType": {
+            "id": 2,
+            "code": "interestRateFrequency.periodFrequencyType.months",
+            "value": "Per month"
+        },
+        "annualInterestRate": 60.000000,
+        "isLinkedToFloatingInterestRates": false,
+        "isFloatingInterestRateCalculationAllowed": false,
+        "allowVariableInstallments": true,
+        "minimumGap": 1,
+        "maximumGap": 20,
+        "amortizationType": {
+            "id": 1,
+            "code": "amortizationType.equal.installments",
+            "value": "Equal installments"
+        },
+        "interestType": {
+            "id": 0,
+            "code": "interestType.declining.balance",
+            "value": "Declining Balance"
+        },
+        "interestCalculationPeriodType": {
+            "id": 1,
+            "code": "interestCalculationPeriodType.same.as.repayment.period",
+            "value": "Same as repayment period"
+        },
+        "allowPartialPeriodInterestCalcualtion": true,
+        "transactionProcessingStrategyId": 1,
+        "transactionProcessingStrategyName": "Penalties, Fees, Interest, Principal order",
+        "daysInMonthType": {
+            "id": 1,
+            "code": "DaysInMonthType.actual",
+            "value": "Actual"
+        },
+        "daysInYearType": {
+            "id": 1,
+            "code": "DaysInYearType.actual",
+            "value": "Actual"
+        },
+        "isInterestRecalculationEnabled": false,
+        "canDefineInstallmentAmount": true,
+        "installmentAmountInMultiplesOf": 1,
+        "charges": [],
+        "principalVariationsForBorrowerCycle": [],
+        "interestRateVariationsForBorrowerCycle": [],
+        "numberOfRepaymentVariationsForBorrowerCycle": [],
+        "accountingRule": {
+            "id": 1,
+            "code": "accountingRuleType.none",
+            "value": "NONE"
+        },
+        "canUseForTopup": true,
+        "isRatesEnabled": false,
+        "rates": [],
+        "multiDisburseLoan": false,
+        "maxTrancheCount": 0,
+        "principalThresholdForLastInstallment": 0.00,
+        "holdGuaranteeFunds": false,
+        "accountMovesOutOfNPAOnlyOnArrearsCompletion": false,
+        "allowAttributeOverrides": {
+            "amortizationType": true,
+            "interestType": true,
+            "transactionProcessingStrategyId": true,
+            "interestCalculationPeriodType": true,
+            "inArrearsTolerance": true,
+            "repaymentEvery": true,
+            "graceOnPrincipalAndInterestPayment": true,
+            "graceOnArrearsAgeing": true
+        },
+        "syncExpectedWithDisbursementDate": false,
+        "isEqualAmortization": false
+    },
+    "overdueCharges": [],
+    "daysInMonthType": {
+        "id": 1,
+        "code": "DaysInMonthType.actual",
+        "value": "Actual"
+    },
+    "daysInYearType": {
+        "id": 1,
+        "code": "DaysInYearType.actual",
+        "value": "Actual"
+    },
+    "isInterestRecalculationEnabled": false,
+    "interestRecalculationData": {},
+    "isVariableInstallmentsAllowed": true,
+    "minimumGap": 1,
+    "maximumGap": 20,
+    "isEqualAmortization": false,
+    "isRatesEnabled": true
 }

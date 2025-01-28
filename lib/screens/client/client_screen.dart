@@ -3,7 +3,6 @@ import 'package:agence_mifos/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
 
 import '../../global/app_const.dart';
 import '../../widgets/action_menu/build_menu_option.dart';
@@ -37,6 +36,7 @@ class ClientScreen extends GetView<ClientController> {
               showCustomMenu(context,MediaQuery.of(context).size.height * 0.8,[
                 buildMenuOption(icon: Icons.add,text: "Add Loan Account",onTap: (){
                   Navigator.pop(context);
+                  Get.toNamed(AppRoute.addLoan , arguments: controller.clientId);
                 }),
                 buildMenuOption(icon: Icons.add,text: "Add Savings Account",onTap: (){}),
                 buildMenuOption(icon: Icons.money,text: "Charges",onTap: (){}),

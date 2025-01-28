@@ -116,6 +116,26 @@ class ChargeOption {
         chargePaymentMode: json["chargePaymentMode"] == null ? null : Charge.fromJson(json["chargePaymentMode"]),
     );
 
+    factory ChargeOption.fromJsonCheck(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["name"],
+    );
+
+    factory ChargeOption.fromJsonCheckDiplayName(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["displayName"],
+    );
+
+    factory ChargeOption.fromJsonCheckProdactName(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["productName"],
+    );
+
+    factory ChargeOption.fromJsonCheckValue(Map<String, dynamic> json) => ChargeOption(
+        id: json["id"],
+        name: json["value"],
+    );
+
     Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,

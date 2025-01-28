@@ -22,31 +22,38 @@ class SelectableTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<String>(
-      value: textEditingController.text.isNotEmpty ? textEditingController.text : null,
-      items: options.map((option) {
-        return DropdownMenuItem<String>(
-          value: option.id.toString(),
-          child: Text(option.name!),
-        );
-      }).toList(),
-      onChanged: (String? newValue) {
-        if (newValue != null) {
-          textEditingController.text = newValue;
-        }
-      },
-      decoration: InputDecoration(
-        hintText: hint,
-        filled: true,
-        fillColor: bgColor,
-        suffixIcon: suffix,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24.sp),
-          borderSide: BorderSide.none,
-        ),
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 35.w,
-          vertical: 35.h,
+    return SizedBox(
+      width: double.infinity,
+      child: DropdownButtonFormField<String>(
+        isExpanded: true,
+        value: textEditingController.text.isNotEmpty ? textEditingController.text : null,
+        items: options.map((option) {
+          return DropdownMenuItem<String>(
+            value: option.id.toString(),
+            child: Text(option.name!,
+            overflow: TextOverflow.ellipsis, // Prevent overflow
+            maxLines: 1, // Single line
+            ),
+          );
+        }).toList(),
+        onChanged: (String? newValue) {
+          if (newValue != null) {
+            textEditingController.text = newValue;
+          }
+        },
+        decoration: InputDecoration(
+          hintText: hint,
+          filled: true,
+          fillColor: bgColor,
+          suffixIcon: suffix,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(24.sp),
+            borderSide: BorderSide.none,
+          ),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 12.h,
+          ),
         ),
       ),
     );
