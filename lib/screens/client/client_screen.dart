@@ -38,7 +38,10 @@ class ClientScreen extends GetView<ClientController> {
                   Navigator.pop(context);
                   Get.toNamed(AppRoute.addLoan , arguments: controller.clientId);
                 }),
-                buildMenuOption(icon: Icons.add,text: "Add Savings Account",onTap: (){}),
+                buildMenuOption(icon: Icons.add,text: "Add Savings Account",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.addSavingAccount , arguments: controller.clientId);
+                }),
                 buildMenuOption(icon: Icons.money,text: "Charges",onTap: (){}),
                 buildMenuOption(icon: Icons.description,text: "Documents",onTap: (){}),
                 buildMenuOption(icon: Icons.person,text: "Identifiers",onTap: (){}),

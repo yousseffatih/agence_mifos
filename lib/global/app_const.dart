@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 class AppConst {
   static const logoUrl = 'assets/images/logo.png';
 
+
   static String dateLabele(List<int>? list) {
     if(list!.isNotEmpty)
     {

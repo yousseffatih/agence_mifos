@@ -1,32 +1,34 @@
-import 'package:agence_mifos/route/routes.dart';
-import 'package:agence_mifos/screens/add_loan_account/add_loan_account_bindings.dart';
-import 'package:agence_mifos/screens/add_loan_account/add_loan_account_screen.dart';
-import 'package:agence_mifos/screens/center/center_bindings.dart';
-import 'package:agence_mifos/screens/center/center_screen.dart';
-import 'package:agence_mifos/screens/charges_loan/charge_loan_bindings.dart';
-import 'package:agence_mifos/screens/charges_loan/charge_loan_screen.dart';
-import 'package:agence_mifos/screens/client/client_bindings.dart';
-import 'package:agence_mifos/screens/client/client_screen.dart';
-import 'package:agence_mifos/screens/clients/clients_bindings.dart';
-import 'package:agence_mifos/screens/clients/clients_screen.dart';
-import 'package:agence_mifos/screens/document_loan/document_loan_bindings.dart';
-import 'package:agence_mifos/screens/document_loan/document_loan_screen.dart';
-import 'package:agence_mifos/screens/group/group_bindings.dart';
-import 'package:agence_mifos/screens/group/group_screen.dart';
-import 'package:agence_mifos/screens/loan_account/loan_account_binding.dart';
-import 'package:agence_mifos/screens/loan_account/loan_account_screen.dart';
-import 'package:agence_mifos/screens/navigation_bar/main_navigation_bar.dart';
-import 'package:agence_mifos/screens/navigation_bar/navigation_bindings.dart';
-import 'package:agence_mifos/screens/repayement_sch_loan/repayement_sch_loan_screen.dart';
-import 'package:agence_mifos/screens/repayement_sch_loan/repayment_sch_loan_bindings.dart';
-import 'package:agence_mifos/screens/sing_In/sing_in_screen.dart';
-import 'package:agence_mifos/screens/test/text_screen.dart';
-import 'package:agence_mifos/screens/transactions_loan/transactions_bindings.dart';
-import 'package:agence_mifos/screens/transactions_loan/transactions_screen.dart';
 import 'package:get/get.dart';
 
+import '../screens/add_loan_account/add_loan_account_bindings.dart';
+import '../screens/add_loan_account/add_loan_account_screen.dart';
+import '../screens/add_saviing_account/add_saving_account_bindings.dart';
+import '../screens/add_saviing_account/add_saving_account_screen.dart';
+import '../screens/center/center_bindings.dart';
+import '../screens/center/center_screen.dart';
+import '../screens/charges_loan/charge_loan_bindings.dart';
+import '../screens/charges_loan/charge_loan_screen.dart';
+import '../screens/client/client_bindings.dart';
+import '../screens/client/client_screen.dart';
+import '../screens/clients/clients_bindings.dart';
+import '../screens/clients/clients_screen.dart';
+import '../screens/document_loan/document_loan_bindings.dart';
+import '../screens/document_loan/document_loan_screen.dart';
+import '../screens/group/group_bindings.dart';
+import '../screens/group/group_screen.dart';
+import '../screens/loan_account/loan_account_binding.dart';
+import '../screens/loan_account/loan_account_screen.dart';
+import '../screens/navigation_bar/main_navigation_bar.dart';
+import '../screens/navigation_bar/navigation_bindings.dart';
+import '../screens/repayement_sch_loan/repayement_sch_loan_screen.dart';
+import '../screens/repayement_sch_loan/repayment_sch_loan_bindings.dart';
 import '../screens/sing_In/sing_in_bindings.dart';
+import '../screens/sing_In/sing_in_screen.dart';
+import '../screens/test/text_screen.dart';
+import '../screens/transactions_loan/transactions_bindings.dart';
+import '../screens/transactions_loan/transactions_screen.dart';
 import 'auth_midelware.dart';
+import 'routes.dart';
 
 class AppPage {
   static final List<GetPage<dynamic>> pages = [
@@ -94,6 +96,11 @@ class AppPage {
           name: AppRoute.addLoan,
           page: () =>  AddLoanAccountScreen(),
           binding: AddLoanAccountBindings()
+        ),
+    GetPage(
+          name: AppRoute.addSavingAccount,
+          page: () =>  AddSavingAccountScreen(),
+          binding: AddSavingAccountBindings()
         ),
   ];
 }
