@@ -1,3 +1,5 @@
+import 'package:agence_mifos/screens/charges_client/charges_client_bindings.dart';
+import 'package:agence_mifos/screens/charges_client/charges_client_screen.dart';
 import 'package:get/get.dart';
 
 import '../screens/add_loan_account/add_loan_account_bindings.dart';
@@ -101,6 +103,11 @@ class AppPage {
           name: AppRoute.addSavingAccount,
           page: () =>  AddSavingAccountScreen(),
           binding: AddSavingAccountBindings()
+        ),
+    GetPage(
+          name: AppRoute.chargesClient,
+          page: () =>  ChargesClientScreen(),
+          binding: ChargesClientBindings()
         ),
   ];
 }

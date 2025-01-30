@@ -1,25 +1,25 @@
-import 'package:agence_mifos/global/app_const.dart';
-import 'package:agence_mifos/theme/app_color.dart';
-import 'package:agence_mifos/widgets/loading_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../global/app_const.dart';
+import '../../theme/app_color.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_row_info_center.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/custume_date_time_picker.dart';
+import '../../widgets/loading_list.dart';
 import '../../widgets/selected_textfield.dart';
-import 'charge_loan_controller.dart';
+import 'charges_client_controller.dart';
 
-class ChargeLoanScreen extends GetView<ChargeLoanController> {
-  const ChargeLoanScreen({super.key});
+class ChargesClientScreen extends GetView<ChargesClientController> {
+  const ChargesClientScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+          backgroundColor: Colors.white,
         title: Text('Loan Account Summary',style: TextStyle(fontSize: 55.sp),),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -45,15 +45,15 @@ class ChargeLoanScreen extends GetView<ChargeLoanController> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Obx(() {
+        child: Obx((){
           if(controller.isLoading.value)
           {
             return LoadingListWidget();
           }
           return ListView.builder(
-            itemCount: controller.chargesLoan.length,
+            itemCount: controller.chargesClient.value.pageItems!.length,
             itemBuilder: (context, index) {
-              final charge = controller.chargesLoan[index];
+              final charge = controller.chargesClient.value.pageItems![index];
               return Card(
                 color: AppColor.white,
                 margin: const EdgeInsets.only(bottom: 16),
@@ -75,37 +75,9 @@ class ChargeLoanScreen extends GetView<ChargeLoanController> {
                 ),
               );
             },
-          );
+          );;
         }),
       ),
-    );
-  }
-}
-
-class rowCard extends StatelessWidget {
-  const rowCard({
-    super.key,
-    required this.value, 
-    required this.label,
-  });
-
-  final String value;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(fontSize: 14),
-        ),
-        Text(
-          "${value}",
-          style: const TextStyle(fontSize: 14 , fontWeight: FontWeight.bold),
-        ),
-      ],
     );
   }
 }
@@ -117,7 +89,7 @@ class showMenu extends StatelessWidget {
     required this.controller,
   });
 
-  final ChargeLoanController controller;
+  final ChargesClientController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -151,11 +123,12 @@ class showMenu extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 50.h,),
+          
+          SizedBox(height: 100.h),
           SelectableTextField(
             hint: "Name",
             bgColor: AppColor.grey.withOpacity(0.15),
-            options: controller.chargesTemplate.value.chargeOptions!,
+            options:  controller.chargeOptions,
             textEditingController: controller.nameController,
           ),
           SizedBox(height: 30.h,),
@@ -178,9 +151,18 @@ class showMenu extends StatelessWidget {
             bgColor: AppColor.grey.withOpacity(0.15),
           ),
           SizedBox(height: 100.h),
-          SizedBox(width: double.infinity,child: CustomButton(text: "Submit",onPressed: (){
-            controller.submitBtn();
-          },)),
+          SizedBox(
+            width: double.infinity,
+            child: CustomButton(
+              load: controller.addLoading.value ,
+              text: "Submit",
+              onPressed: () async {
+                await controller.submitBtn();
+                controller.clearForm();
+                Navigator.pop(context);
+              },
+            ),
+          ),
           SizedBox(height: 100.h),
         ],),
       ),

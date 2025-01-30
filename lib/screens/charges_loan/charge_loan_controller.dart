@@ -24,13 +24,6 @@ class ChargeLoanController extends GetxController{
   TextEditingController localController = TextEditingController();
 
   final isTrue = true.obs;
-  final List<String> suggestions = [
-    'John Doe',
-    'Jane Smith',
-    'Robert Brown',
-    'Emily Davis',
-    'Michael Johnson',
-  ];
 
   @override
   void onInit() async {
