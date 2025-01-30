@@ -1,5 +1,4 @@
-import 'package:agence_mifos/screens/charges_client/charges_client_bindings.dart';
-import 'package:agence_mifos/screens/charges_client/charges_client_screen.dart';
+import 'package:agence_mifos/screens/test/test_binding.dart';
 import 'package:get/get.dart';
 
 import '../screens/add_loan_account/add_loan_account_bindings.dart';
@@ -8,12 +7,16 @@ import '../screens/add_saviing_account/add_saving_account_bindings.dart';
 import '../screens/add_saviing_account/add_saving_account_screen.dart';
 import '../screens/center/center_bindings.dart';
 import '../screens/center/center_screen.dart';
+import '../screens/charges_client/charges_client_bindings.dart';
+import '../screens/charges_client/charges_client_screen.dart';
 import '../screens/charges_loan/charge_loan_bindings.dart';
 import '../screens/charges_loan/charge_loan_screen.dart';
 import '../screens/client/client_bindings.dart';
 import '../screens/client/client_screen.dart';
 import '../screens/clients/clients_bindings.dart';
 import '../screens/clients/clients_screen.dart';
+import '../screens/document_client/document_client_bindings.dart';
+import '../screens/document_client/document_client_screen.dart';
 import '../screens/document_loan/document_loan_bindings.dart';
 import '../screens/document_loan/document_loan_screen.dart';
 import '../screens/group/group_bindings.dart';
@@ -58,6 +61,7 @@ class AppPage {
     GetPage(
           name: AppRoute.test,
           page: () =>  TestScreen(),
+          binding: TestBinding(),
         ),
     GetPage(
           name: AppRoute.centerByID,
@@ -108,6 +112,11 @@ class AppPage {
           name: AppRoute.chargesClient,
           page: () =>  ChargesClientScreen(),
           binding: ChargesClientBindings()
+        ),
+    GetPage(
+          name: AppRoute.documentClient,
+          page: () =>  DocumentClientScreen(),
+          binding: DocumentClientBindings()
         ),
   ];
 }
