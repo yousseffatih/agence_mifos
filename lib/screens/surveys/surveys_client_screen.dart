@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 import '../../theme/app_color.dart';
 import 'pintpoint_client_controller.dart';
 
-class PintpointClientScreen extends GetView<PintpointClientController> {
-  const PintpointClientScreen({super.key});
+class SurveysClientScreen extends GetView<SurveysClientController> {
+  const SurveysClientScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

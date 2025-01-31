@@ -1,9 +1,9 @@
 import 'package:agence_mifos/data/api_client.dart';
 
-class PintpointClientProvider {
+class SurveysClientProvider {
   final ApiClient apiClient;
 
-  PintpointClientProvider({ required this.apiClient});
+  SurveysClientProvider({ required this.apiClient});
 
   Future<dynamic> getAllSurveys() async 
   {
