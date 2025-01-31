@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../theme/app_color.dart';
-import 'pintpoint_client_controller.dart';
+import 'surveys_client_controller.dart';
 
 class SurveysClientScreen extends GetView<SurveysClientController> {
   const SurveysClientScreen({super.key});
@@ -18,14 +18,7 @@ class SurveysClientScreen extends GetView<SurveysClientController> {
           icon: Icon(Icons.arrow_back),
           onPressed: () => Get.back(),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.local_activity),
-            onPressed: () {
-              
-            },
-          ),
-        ],
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

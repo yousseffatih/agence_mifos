@@ -17,4 +17,5 @@ class AppRoute {
   static const documentClient = "/documentClient";
   static const identifierClient = "/identifierClient";
   static const pinpointClient = "/pinpointClient";
+  static const survery = "/survery";
 }
