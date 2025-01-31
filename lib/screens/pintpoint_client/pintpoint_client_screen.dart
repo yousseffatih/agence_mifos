@@ -1,22 +1,31 @@
-import 'package:agence_mifos/theme/app_color.dart';
+import 'package:agence_mifos/widgets/loading_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'test_controller.dart';
+import '../../theme/app_color.dart';
+import 'pintpoint_client_controller.dart';
 
-class TestScreen extends GetView<TestScreenController> {
-  const TestScreen({super.key});
+class PintpointClientScreen extends GetView<PintpointClientController> {
+  const PintpointClientScreen({super.key});
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Surveys', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        title: Text("Pinpoint Client"),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back),
           onPressed: () => Get.back(),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.local_activity),
+            onPressed: () {
+              
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -28,10 +37,15 @@ class TestScreen extends GetView<TestScreenController> {
             const SizedBox(height: 16),
             Expanded(
               child: Obx(
-                () => ListView.builder(
-                  itemCount: controller.surveys.length,
+                () {
+                  if(controller.isLoading.value)
+                  {
+                    return LoadingListWidget();
+                  }
+                  return ListView.builder(
+                  itemCount: controller.listSurveysClient.length,
                   itemBuilder: (context, index) {
-                    final survey = controller.surveys[index];
+                    final survey = controller.listSurveysClient[index];
                     return Container(
                       margin: const EdgeInsets.symmetric(vertical: 8),
                       decoration: BoxDecoration(
@@ -49,18 +63,17 @@ class TestScreen extends GetView<TestScreenController> {
                         ],
                       ),
                       child: ListTile(
-                        title: Text(survey.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                        subtitle: survey.description.isNotEmpty
-                            ? Text(survey.description, style: TextStyle(color: Colors.grey[700]))
-                            : null,
+                        title: Text(survey.name!, style: const TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: Text(survey.description!, style: TextStyle(color: Colors.grey[700])),
                         onTap: () {
-                          Get.snackbar('Survey Selected', survey.title,
+                          Get.snackbar('Survey Selected', survey.name!,
                               snackPosition: SnackPosition.BOTTOM);
                         },
                       ),
                     );
                   },
-                ),
+                );
+                },
               ),
             ),
           ],

@@ -1,15 +1,14 @@
-import 'package:agence_mifos/route/routes.dart';
-import 'package:agence_mifos/widgets/loading_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../model/identifier_client.model.dart';
+import '../../route/routes.dart';
 import '../../theme/app_color.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/custum_check_box.dart';
-import '../../widgets/custume_date_time_picker.dart';
+import '../../widgets/loading_circle.dart';
 import '../../widgets/loading_list.dart';
 import '../../widgets/selected_textfield.dart';
 import 'identifier_client_controller.dart';

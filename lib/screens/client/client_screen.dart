@@ -56,7 +56,11 @@ class ClientScreen extends GetView<ClientController> {
                 }),
                 buildMenuOption(icon: Icons.info,text: "More client info",onTap: (){}),
                 buildMenuOption(icon: Icons.notes,text: "Notes",onTap: (){}),
-                buildMenuOption(icon: Icons.location_on,text: "Pinpoint Location",onTap: (){}),
+                buildMenuOption(icon: Icons.location_on,text: "Pinpoint Location",onTap: (){
+                  Navigator.pop(context);
+                  //Get.toNamed(AppRoute.test , arguments: controller.clientId);
+                  Get.toNamed(AppRoute.pinpointClient , arguments: controller.clientId);
+                }),
                 buildMenuOption(icon: Icons.question_answer,text: "Survey",onTap: (){}),
                 buildMenuOption(icon: Icons.upload,text: "Upload Signature",onTap: (){}),
               ]);
