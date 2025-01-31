@@ -91,9 +91,8 @@ class AddLoanAccountController extends GetxController{
       listTermsWeekTypes.value = listsLoan.repaymentFrequencyDaysOfWeekTypeOptions!.map<ChargeOption>((e)=> ChargeOption.fromJsonCheckValue(e.toJson())).toList();
       listTermsFrequencyTypes.value = listsLoan.termFrequencyTypeOptions!.map<ChargeOption>((e)=> ChargeOption.fromJsonCheckValue(e.toJson())).toList();
     });
-
-
-    Future<void> addLoanDynamic() async {
+  }
+  Future<void> addLoanDynamic() async {
       loadingSubmit.value = true;
       AddLoanBody body = AddLoanBody();
       body.amortizationType = int.parse(amortization.text);
@@ -128,6 +127,6 @@ class AddLoanAccountController extends GetxController{
       }, (rightResult){
         SnackbarUtils.showSuccess(rightResult.toString());
       });
+      loadingSubmit.value = false;
     }
-  }
 }

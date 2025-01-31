@@ -38,13 +38,29 @@ class ClientScreen extends GetView<ClientController> {
                   Navigator.pop(context);
                   Get.toNamed(AppRoute.addLoan , arguments: controller.clientId);
                 }),
-                buildMenuOption(icon: Icons.add,text: "Add Savings Account",onTap: (){}),
-                buildMenuOption(icon: Icons.money,text: "Charges",onTap: (){}),
-                buildMenuOption(icon: Icons.description,text: "Documents",onTap: (){}),
-                buildMenuOption(icon: Icons.person,text: "Identifiers",onTap: (){}),
+                buildMenuOption(icon: Icons.add,text: "Add Savings Account",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.addSavingAccount , arguments: controller.clientId);
+                }),
+                buildMenuOption(icon: Icons.money,text: "Charges",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.chargesClient , arguments: controller.clientId);
+                }),
+                buildMenuOption(icon: Icons.description,text: "Documents",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.documentClient , arguments: controller.clientId);
+                }),
+                buildMenuOption(icon: Icons.person,text: "Identifiers",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.identifierClient , arguments: controller.clientId);
+                }),
                 buildMenuOption(icon: Icons.info,text: "More client info",onTap: (){}),
                 buildMenuOption(icon: Icons.notes,text: "Notes",onTap: (){}),
-                buildMenuOption(icon: Icons.location_on,text: "Pinpoint Location",onTap: (){}),
+                buildMenuOption(icon: Icons.location_on,text: "Pinpoint Location",onTap: (){
+                  Navigator.pop(context);
+                  //Get.toNamed(AppRoute.test , arguments: controller.clientId);
+                  Get.toNamed(AppRoute.pinpointClient , arguments: controller.clientId);
+                }),
                 buildMenuOption(icon: Icons.question_answer,text: "Survey",onTap: (){}),
                 buildMenuOption(icon: Icons.upload,text: "Upload Signature",onTap: (){}),
               ]);

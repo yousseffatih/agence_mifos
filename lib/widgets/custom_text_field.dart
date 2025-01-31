@@ -12,6 +12,7 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final Color? bgColor;
   final int? maxLine;
+  final bool readOnly;
 
   const CustomTextField({
     Key? key,
@@ -22,13 +23,15 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon, 
     this.validator,
     this.maxLine = 1,
-    this.bgColor = AppColor.white
+    this.bgColor = AppColor.white,
+    this.readOnly = false
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      readOnly: readOnly,
       validator: validator,
       obscureText: obscureText,
       keyboardType: keyboardType,

@@ -1,22 +1,22 @@
 import 'dart:io';
 
-import 'package:agence_mifos/screens/document_loan/document_loan_controller.dart';
-import 'package:agence_mifos/theme/app_color.dart';
+import 'package:agence_mifos/screens/document_client/document_client_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../theme/app_color.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/search_button.dart';
 
-class DocumentLoanScreen extends GetView<DocumentLoanController> {
-  const DocumentLoanScreen({super.key});
+class DocumentClientScreen extends GetView<DocumentClientController> {
+  const DocumentClientScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: true, 
       appBar: AppBar(
         title: Text('Documents'),
         leading: IconButton(
@@ -29,13 +29,13 @@ class DocumentLoanScreen extends GetView<DocumentLoanController> {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                isScrollControlled: true, // Ensures the sheet can resize for the keyboard
+                isScrollControlled: true, 
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(16),
                   ),
                 ),
-                builder: (_) => showMenu(controller: controller),
+                builder: (_) => showMenu(),
               );
             },
           ),
@@ -45,13 +45,13 @@ class DocumentLoanScreen extends GetView<DocumentLoanController> {
   }
 }
 
-class showMenu extends StatelessWidget {
+
+
+
+class showMenu extends GetView<DocumentClientController> {
   const showMenu({
     super.key,
-    required this.controller,
   });
-
-  final DocumentLoanController controller;
 
   @override
   Widget build(BuildContext context) {

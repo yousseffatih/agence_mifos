@@ -12,4 +12,9 @@ class AppRoute {
   static const document = "/document";
   static const chargeLoan = "/chargeLoan";
   static const addLoan = "/addLoan";
+  static const addSavingAccount = "/addSavingLoan";
+  static const chargesClient = "/chargesClient";
+  static const documentClient = "/documentClient";
+  static const identifierClient = "/identifierClient";
+  static const pinpointClient = "/pinpointClient";
 }

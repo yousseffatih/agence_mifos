@@ -44,4 +44,8 @@ class ApiClient {
   Future<Response> get(String path) async {
     return dio.get(path);
   }
+
+  Future<Response> delete(String path) async {
+    return dio.delete(path);
+  }
 }
