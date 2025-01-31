@@ -1,7 +1,8 @@
 import 'package:agence_mifos/screens/identifier_client/identifier_client_bindings.dart';
 import 'package:agence_mifos/screens/identifier_client/indetifier_client_screen.dart';
-import 'package:agence_mifos/screens/pintpoint_client/pintpoint_client_screen.dart';
-import 'package:agence_mifos/screens/pintpoint_client/pintpoint_cliet_bindings.dart';
+import 'package:agence_mifos/screens/surveys/surveys_client_bindings.dart';
+import 'package:agence_mifos/screens/surveys_client/surveys_client_screen.dart';
+import 'package:agence_mifos/screens/surveys_client/pintpoint_cliet_bindings.dart';
 import 'package:agence_mifos/screens/test/test_binding.dart';
 import 'package:get/get.dart';
 
@@ -33,6 +34,7 @@ import '../screens/repayement_sch_loan/repayement_sch_loan_screen.dart';
 import '../screens/repayement_sch_loan/repayment_sch_loan_bindings.dart';
 import '../screens/sing_In/sing_in_bindings.dart';
 import '../screens/sing_In/sing_in_screen.dart';
+import '../screens/surveys/surveys_client_screen.dart';
 import '../screens/test/text_screen.dart';
 import '../screens/transactions_loan/transactions_bindings.dart';
 import '../screens/transactions_loan/transactions_screen.dart';
@@ -129,8 +131,8 @@ class AppPage {
         ),
     GetPage(
           name: AppRoute.pinpointClient,
-          page: () =>  PintpointClientScreen(),
-          binding: PintpointClietBindings()
+          page: () =>  SurveysClientScreen(),
+          binding: SurveysClientBindings()
         ),
   ];
 }
