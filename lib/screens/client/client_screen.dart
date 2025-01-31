@@ -52,7 +52,7 @@ class ClientScreen extends GetView<ClientController> {
                 }),
                 buildMenuOption(icon: Icons.person,text: "Identifiers",onTap: (){
                   Navigator.pop(context);
-                  Get.toNamed(AppRoute.test , arguments: controller.clientId);
+                  Get.toNamed(AppRoute.identifierClient , arguments: controller.clientId);
                 }),
                 buildMenuOption(icon: Icons.info,text: "More client info",onTap: (){}),
                 buildMenuOption(icon: Icons.notes,text: "Notes",onTap: (){}),

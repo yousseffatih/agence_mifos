@@ -1,3 +1,5 @@
+import 'package:agence_mifos/screens/identifier_client/identifier_client_bindings.dart';
+import 'package:agence_mifos/screens/identifier_client/indetifier_client_screen.dart';
 import 'package:agence_mifos/screens/test/test_binding.dart';
 import 'package:get/get.dart';
 
@@ -117,6 +119,11 @@ class AppPage {
           name: AppRoute.documentClient,
           page: () =>  DocumentClientScreen(),
           binding: DocumentClientBindings()
+        ),
+    GetPage(
+          name: AppRoute.identifierClient,
+          page: () =>  IdnetifierClientScreen(),
+          binding: IdentifierClientBindings()
         ),
   ];
 }

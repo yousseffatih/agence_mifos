@@ -1,6 +1,5 @@
 import 'package:agence_mifos/theme/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'test_controller.dart';

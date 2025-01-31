@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: load? null : onPressed,
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
         shape: RoundedRectangleBorder(
@@ -32,7 +32,7 @@ class CustomButton extends StatelessWidget {
         padding:  EdgeInsets.symmetric(vertical: 20.h),
       ),
       child: load ? LoadingCircle(
-        height: 80,width: 80,color: AppColor.primaryColor,
+        height: 80,width: 80,color: AppColor.white,
       ) : Text (
         text,
         style: TextStyle(
