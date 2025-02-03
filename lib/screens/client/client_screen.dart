@@ -64,7 +64,10 @@ class ClientScreen extends GetView<ClientController> {
                   Navigator.pop(context);
                   Get.toNamed(AppRoute.survery , arguments: controller.clientId);
                 }),
-                buildMenuOption(icon: Icons.upload,text: "Upload Signature",onTap: (){}),
+                buildMenuOption(icon: Icons.upload,text: "Upload Signature",onTap: (){
+                  Navigator.pop(context);
+                  Get.toNamed(AppRoute.uploadSignature , arguments: controller.clientId);
+                }),
               ]);
             },
           ),
