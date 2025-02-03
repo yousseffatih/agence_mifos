@@ -2,6 +2,8 @@ import 'package:agence_mifos/screens/notes_client/notes_client_bindings.dart';
 import 'package:agence_mifos/screens/notes_client/notes_client_screen.dart';
 import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_bindings.dart';
 import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_screen.dart';
+import 'package:agence_mifos/screens/saving_account_client/saving_account_bindings.dart';
+import 'package:agence_mifos/screens/saving_account_client/saving_account_screen.dart';
 import 'package:agence_mifos/screens/upload_signature/upload_signature_bindings.dart';
 import 'package:agence_mifos/screens/upload_signature/upload_signature_screen.dart';
 import 'package:get/get.dart';
@@ -152,6 +154,11 @@ class AppPage {
           name: AppRoute.notesClient,
           page: () =>  NotesClientScreen(),
           binding: NotesClientBindings()
+        ),
+    GetPage(
+          name: AppRoute.savingAccountClient,
+          page: () =>  SavingAccountScreen(),
+          binding: SavingAccountBindings()
         ),
   ];
 }
