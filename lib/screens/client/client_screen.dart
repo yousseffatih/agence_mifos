@@ -266,6 +266,7 @@ class ClientScreen extends GetView<ClientController> {
                           color: Colors.white,
                           child: ListTile(
                             onTap : () => {
+                              Get.toNamed(AppRoute.savingAccountClient, arguments: item.id)
                             },
                             leading: CircleAvatar(
                               backgroundColor: AppConst.getLoanColor(item.status!.value!),
