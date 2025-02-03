@@ -21,4 +21,5 @@ class AppRoute {
   static const uploadSignature = "/uploadSignature";
   static const notesClient = "/notesClient";
   static const savingAccountClient = "/savingAccountClient";
+  static const documentSavingAccountClient = "/documentSavingAccountClient";
 }
