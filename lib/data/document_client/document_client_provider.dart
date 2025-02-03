@@ -4,8 +4,8 @@ class DocumentClientProvider {
   final ApiClient apiClient;
   DocumentClientProvider({ required this.apiClient});
 
-  Future<dynamic> getAllDocumentsLoan (int idLoan) async {
-    final response = await apiClient.get('/clients/$idLoan/documents');
+  Future<dynamic> getAllDocumentsLoan (int id) async {
+    final response = await apiClient.get('/clients/$id/documents');
      try{
       if(response.statusCode == 200)
       {

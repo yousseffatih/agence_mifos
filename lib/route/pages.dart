@@ -1,9 +1,7 @@
-import 'package:agence_mifos/screens/identifier_client/identifier_client_bindings.dart';
-import 'package:agence_mifos/screens/identifier_client/indetifier_client_screen.dart';
-import 'package:agence_mifos/screens/surveys/surveys_client_bindings.dart';
-import 'package:agence_mifos/screens/surveys_client/surveys_client_screen.dart';
-import 'package:agence_mifos/screens/surveys_client/pintpoint_cliet_bindings.dart';
-import 'package:agence_mifos/screens/test/test_binding.dart';
+import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_bindings.dart';
+import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_screen.dart';
+import 'package:agence_mifos/screens/upload_signature/upload_signature_bindings.dart';
+import 'package:agence_mifos/screens/upload_signature/upload_signature_screen.dart';
 import 'package:get/get.dart';
 
 import '../screens/add_loan_account/add_loan_account_bindings.dart';
@@ -26,6 +24,8 @@ import '../screens/document_loan/document_loan_bindings.dart';
 import '../screens/document_loan/document_loan_screen.dart';
 import '../screens/group/group_bindings.dart';
 import '../screens/group/group_screen.dart';
+import '../screens/identifier_client/identifier_client_bindings.dart';
+import '../screens/identifier_client/indetifier_client_screen.dart';
 import '../screens/loan_account/loan_account_binding.dart';
 import '../screens/loan_account/loan_account_screen.dart';
 import '../screens/navigation_bar/main_navigation_bar.dart';
@@ -34,7 +34,9 @@ import '../screens/repayement_sch_loan/repayement_sch_loan_screen.dart';
 import '../screens/repayement_sch_loan/repayment_sch_loan_bindings.dart';
 import '../screens/sing_In/sing_in_bindings.dart';
 import '../screens/sing_In/sing_in_screen.dart';
+import '../screens/surveys/surveys_client_bindings.dart';
 import '../screens/surveys/surveys_client_screen.dart';
+import '../screens/test/test_binding.dart';
 import '../screens/test/text_screen.dart';
 import '../screens/transactions_loan/transactions_bindings.dart';
 import '../screens/transactions_loan/transactions_screen.dart';
@@ -130,9 +132,19 @@ class AppPage {
           binding: IdentifierClientBindings()
         ),
     GetPage(
-          name: AppRoute.pinpointClient,
+          name: AppRoute.survery,
           page: () =>  SurveysClientScreen(),
           binding: SurveysClientBindings()
+        ),
+    GetPage(
+          name: AppRoute.pinpointClient,
+          page: () =>  PinpointClientScreen(),
+          binding: PinpointClientBindings()
+        ),
+    GetPage(
+          name: AppRoute.uploadSignature,
+          page: () =>  UploadSignatureScreen(),
+          binding: UploadSignatureBindings()
         ),
   ];
 }
