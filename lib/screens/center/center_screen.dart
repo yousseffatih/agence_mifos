@@ -1,3 +1,4 @@
+import 'package:agence_mifos/route/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -24,9 +25,11 @@ class CenterScreen extends GetView<CenterController> {
               showCustomMenu(context,MediaQuery.of(context).size.height * 0.8,[
                 buildMenuOption(icon: Icons.add,text: "Add Savings Account",onTap: (){
                   Navigator.pop(context);
+                  Get.toNamed(AppRoute.addSavingAccount, arguments: controller.centerId);
                 }),
                 buildMenuOption(icon: Icons.group,text: "Group List",onTap: (){
                   Navigator.pop(context);
+                  Get.toNamed(AppRoute.groupListCenter, arguments: controller.centerId);
                 }),
                 
               ]);
