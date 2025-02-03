@@ -31,7 +31,7 @@ class SavingAccountScreen extends GetView<SavingAccountController> {
                 }),
                 buildMenuOption(icon: Icons.description,text: "Documents",onTap: (){
                   Navigator.pop(context);
-                  
+                  Get.toNamed(AppRoute.documentSavingAccountClient,arguments: controller.idSavingAccount);
                 })
               ]);
             },
