@@ -1,6 +1,5 @@
 import 'package:agence_mifos/theme/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'test_controller.dart';
@@ -12,60 +11,44 @@ class TestScreen extends GetView<TestScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Surveys', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        title: Text("Groups"),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back),
           onPressed: () => Get.back(),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Select one survey',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-            const SizedBox(height: 16),
-            Expanded(
-              child: Obx(
-                () => ListView.builder(
-                  itemCount: controller.surveys.length,
-                  itemBuilder: (context, index) {
-                    final survey = controller.surveys[index];
-                    return Container(
-                      margin: const EdgeInsets.symmetric(vertical: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border(
-                          top: BorderSide(color: AppColor.primaryColor, width: 10.w),
+      body: Obx(() => ListView.builder(
+            itemCount: controller.groups.length,
+            itemBuilder: (context, index) {
+              final group = controller.groups[index];
+              return Card(
+                color: AppColor.white,
+                child: ListTile(
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(group.name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      Text(group.owner, style: TextStyle(fontSize: 14, color: Colors.grey)),
+                    ],
+                  ),
+                  subtitle: Row(
+                    children: [
+                      Text("status", style: TextStyle(fontSize: 14)),
+                      SizedBox(width: 5),
+                      Container(
+                        width: 12,
+                        height: 12,
+                        decoration: BoxDecoration(
+                          color: group.isActive ? Colors.green : Colors.red,
+                          borderRadius: BorderRadius.circular(3),
                         ),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 4,
-                            offset: Offset(0, 2),
-                          ),
-                        ],
                       ),
-                      child: ListTile(
-                        title: Text(survey.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                        subtitle: survey.description.isNotEmpty
-                            ? Text(survey.description, style: TextStyle(color: Colors.grey[700]))
-                            : null,
-                        onTap: () {
-                          Get.snackbar('Survey Selected', survey.title,
-                              snackPosition: SnackPosition.BOTTOM);
-                        },
-                      ),
-                    );
-                  },
+                    ],
+                  ),
                 ),
-              ),
-            ),
-          ],
-        ),
-      ),
+              );
+            },
+          )),
     );
   }
 }

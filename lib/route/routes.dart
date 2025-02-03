@@ -22,4 +22,5 @@ class AppRoute {
   static const notesClient = "/notesClient";
   static const savingAccountClient = "/savingAccountClient";
   static const documentSavingAccountClient = "/documentSavingAccountClient";
+  static const groupListCenter = "/groupListCenter";
 }

@@ -1,5 +1,7 @@
 import 'package:agence_mifos/screens/document_savingAccount_client/document_savingAccount_bindings.dart';
 import 'package:agence_mifos/screens/document_savingAccount_client/document_savingAccount_screen.dart';
+import 'package:agence_mifos/screens/group_list_center/group_list_center_bindings.dart';
+import 'package:agence_mifos/screens/group_list_center/group_list_center_screen.dart';
 import 'package:agence_mifos/screens/notes_client/notes_client_bindings.dart';
 import 'package:agence_mifos/screens/notes_client/notes_client_screen.dart';
 import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_bindings.dart';
@@ -166,6 +168,11 @@ class AppPage {
           name: AppRoute.documentSavingAccountClient,
           page: () =>  DocumentSavingaccountScreen(),
           binding: DocumentSavingaccountBindings()
+        ),
+    GetPage(
+          name: AppRoute.groupListCenter,
+          page: () =>  GroupListCenterScreen(),
+          binding: GroupListCenterBindings()
         ),
   ];
 }
