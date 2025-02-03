@@ -1,3 +1,5 @@
+import 'package:agence_mifos/screens/notes_client/notes_client_bindings.dart';
+import 'package:agence_mifos/screens/notes_client/notes_client_screen.dart';
 import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_bindings.dart';
 import 'package:agence_mifos/screens/pinpoint_client/pinpoint_client_screen.dart';
 import 'package:agence_mifos/screens/upload_signature/upload_signature_bindings.dart';
@@ -145,6 +147,11 @@ class AppPage {
           name: AppRoute.uploadSignature,
           page: () =>  UploadSignatureScreen(),
           binding: UploadSignatureBindings()
+        ),
+    GetPage(
+          name: AppRoute.notesClient,
+          page: () =>  NotesClientScreen(),
+          binding: NotesClientBindings()
         ),
   ];
 }

@@ -1,5 +1,4 @@
 import 'package:agence_mifos/data/charges_client/charges_client_provider.dart';
-import 'package:agence_mifos/model/add_loan_list.dart';
 import 'package:agence_mifos/model/body/submit_charges.body.dart';
 import 'package:agence_mifos/model/charge_template.model.dart';
 import 'package:dartz/dartz.dart';

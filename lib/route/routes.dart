@@ -19,4 +19,5 @@ class AppRoute {
   static const pinpointClient = "/pinpointClient";
   static const survery = "/survery";
   static const uploadSignature = "/uploadSignature";
+  static const notesClient = "/notesClient";
 }
