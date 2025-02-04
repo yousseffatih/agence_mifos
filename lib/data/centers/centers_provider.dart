@@ -45,4 +45,22 @@ class CentersProvider {
     } 
   }
 
+  Future<dynamic> activateCenter(int id , String date) async {
+    final body = {
+      "locale": "en",
+      "dateFormat": "dd MMMM yyyy",
+      "activationDate": date
+    };
+
+    final response = await apiClient.post("/centers/$id?command=activate", body);
+    try{
+      if(response.statusCode==200)
+      {
+        return response.data;
+      }
+    } catch(e) {
+      rethrow;
+    }
+  }
+
 }

@@ -1,5 +1,8 @@
+import 'package:agence_mifos/global/app_const.dart';
 import 'package:agence_mifos/model/center_info.model.dart';
 import 'package:agence_mifos/model/center_summery_info_center.dart';
+import 'package:agence_mifos/widgets/snak_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../repository/centers/centers_repository.dart';
@@ -9,9 +12,13 @@ class CenterController extends GetxController{
   CenterController({required this.centersRepository});
 
   late int centerId;
-  RxBool isLoading = true.obs;
+  RxBool isLoading = false.obs;
+  RxBool loadActivate = false.obs;
+
   final centerInfo = CenterInfo().obs;
   final centerSymmeryInfo = CenterSummeryInfo().obs;
+
+  TextEditingController activatedDateController = TextEditingController();
 
   @override
   void onInit() async{
@@ -40,5 +47,18 @@ class CenterController extends GetxController{
     }, (centerDetailInfo){
       centerSymmeryInfo.value = centerDetailInfo;
     });
+  }
+
+  Future<void> activateCenter() async {
+    loadActivate.value = true;
+    print(activatedDateController.text);
+    final reslut = await centersRepository.activateCenter(centerId, activatedDateController.text);
+    reslut.fold((failure){
+      SnackbarUtils.showError(failure.message);
+    }, (data){
+      SnackbarUtils.showError(data.toString());
+      activatedDateController.clear();
+    });
+    loadActivate.value = false;
   }
 }
