@@ -1,10 +1,12 @@
 import 'package:agence_mifos/route/routes.dart';
+import 'package:agence_mifos/widgets/custume_date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../global/app_const.dart';
 import '../../theme/app_color.dart';
+import '../../widgets/custom_button.dart';
 import '../../widgets/custom_row_info_center.dart';
 import '../center/center_controller.dart';
 import '../../widgets/action_menu/build_menu_option.dart';
@@ -125,6 +127,50 @@ class CenterScreen extends GetView<CenterController> {
                 ],
               ).paddingAll(32.sp),
             ),
+            if(!center.active!)
+            SizedBox(
+              width: double.infinity.sp,
+              child: CustomButton(
+                text: "Activate Center",
+                onPressed: (){
+                  showCustomMenu(context,MediaQuery.of(context).size.height * 0.8,[
+                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Activate",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.close),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            controller.activatedDateController.clear();
+                          },
+                        ),
+                      ],
+                    ),
+                    CustumeDateTimePicker(textEditingController: controller.activatedDateController, hint: "Activation Date"),
+                    Obx(()=> SizedBox(
+                      width: double.infinity.w,
+                      child: CustomButton(
+                        onPressed: ()async{
+                          await controller.activateCenter();
+                          Navigator.pop(context);
+                        },
+                        text: "Activate",
+                        load: controller.loadActivate.value,
+                      ),
+                    ),)
+                    
+                  ]);
+                },
+              ),
+            )
           ],
         ),
       );

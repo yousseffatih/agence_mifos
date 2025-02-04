@@ -41,4 +41,13 @@ class CentersRepository {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+  Future<Either<Failure,dynamic>> activateCenter(int id, String date) async {
+    try{
+      final data = await centersProvider.activateCenter(id, date);
+      return Right(data);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }
