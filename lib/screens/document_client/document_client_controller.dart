@@ -19,7 +19,6 @@ class DocumentClientController extends GetxController{
 
   @override
   void onInit() {
-    idClient = Get.arguments;
     super.onInit();
   }
 

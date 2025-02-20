@@ -69,7 +69,6 @@ class LoanAccountScreen extends GetView<LoanAccountController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Section
             Card(
               color: AppColor.white,
               elevation: 2,
