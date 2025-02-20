@@ -9,6 +9,7 @@ import '../../theme/app_color.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/search_button.dart';
+import '../document_loan/document_loan_controller.dart';
 
 class DocumentClientScreen extends GetView<DocumentClientController> {
   const DocumentClientScreen({super.key});
@@ -35,7 +36,7 @@ class DocumentClientScreen extends GetView<DocumentClientController> {
                     top: Radius.circular(16),
                   ),
                 ),
-                builder: (_) => showMenu(),
+                builder: (_) => showMenuClient(controller: controller),
               );
             },
           ),
@@ -48,10 +49,13 @@ class DocumentClientScreen extends GetView<DocumentClientController> {
 
 
 
-class showMenu extends GetView<DocumentClientController> {
-  const showMenu({
-    super.key,
+class showMenuClient extends StatelessWidget {
+  const showMenuClient({
+    super.key, required this.controller,
   });
+
+  final DocumentClientController controller;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +84,7 @@ class showMenu extends GetView<DocumentClientController> {
               IconButton(
                 icon: Icon(Icons.close),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.pop(context);
                 },
               ),
             ],

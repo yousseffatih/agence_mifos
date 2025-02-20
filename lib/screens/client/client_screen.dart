@@ -48,6 +48,7 @@ class ClientScreen extends GetView<ClientController> {
                 }),
                 buildMenuOption(icon: Icons.description,text: "Documents",onTap: (){
                   Navigator.pop(context);
+                  print("${controller.clientId}");
                   Get.toNamed(AppRoute.documentClient , arguments: controller.clientId);
                 }),
                 buildMenuOption(icon: Icons.person,text: "Identifiers",onTap: (){

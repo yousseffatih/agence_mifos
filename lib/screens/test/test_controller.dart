@@ -2,20 +2,37 @@ import 'package:get/get.dart';
 
 class TestScreenController extends GetxController {
   TestScreenController();
-   var groups = <GroupModel>[].obs;
+   var clientName = "TestS1".obs;
+  var accountBalance = 2687.0.obs;
+  var totalDeposits = 2789.0.obs;
+  var totalWithdrawals = 100.0.obs;
+  var interestEarned = 438.21.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    fetchGroups();
+  var transactions = <Map<String, dynamic>>[
+    {"date": "10 May 2024", "type": "Withdrawal", "amount": -100.0},
+    {"date": "14 Aug 2022", "type": "Deposit", "amount": 200.0},
+    {"date": "14 Aug 2022", "type": "Deposit", "amount": 100.0},
+    {"date": "14 Aug 2022", "type": "Deposit", "amount": 200.0},
+    {"date": "14 Aug 2022", "type": "Deposit", "amount": 500.0},
+    {"date": "10 Mar 2021", "type": "Deposit", "amount": 789.0},
+    {"date": "1 May 2020", "type": "Pay Charge", "amount": 2.0},
+    {"date": "1 May 2020", "type": "Deposit", "amount": 1000.0},
+  ].obs;
+
+  void makeDeposit(double amount) {
+    accountBalance.value += amount;
+    totalDeposits.value += amount;
+    transactions.insert(0, {"date": "Today", "type": "Deposit", "amount": amount});
   }
 
-  void fetchGroups() {
-    groups.assignAll([
-      GroupModel(name: "Prueba", owner: "BEREBIN", isActive: true),
-      GroupModel(name: "Team Alpha", owner: "JohnDoe", isActive: false),
-      GroupModel(name: "Dev Squad", owner: "JaneSmith", isActive: true),
-    ]);
+  void withdraw(double amount) {
+    if (accountBalance.value >= amount) {
+      accountBalance.value -= amount;
+      totalWithdrawals.value += amount;
+      transactions.insert(0, {"date": "Today", "type": "Withdrawal", "amount": -amount});
+    } else {
+      Get.snackbar("Error", "Insufficient Balance", snackPosition: SnackPosition.BOTTOM);
+    }
   }
 }
 

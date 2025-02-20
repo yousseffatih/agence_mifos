@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../global/app_const.dart';
+import '../../route/routes.dart';
 import '../../theme/app_color.dart';
 import '../../widgets/action_menu/build_menu_option.dart';
 import '../../widgets/action_menu/curtom_show_action_menu.dart';
@@ -188,6 +189,7 @@ class GroupScreen extends GetView<GroupController> {
                           return Card(
                             color: Colors.white,
                             child: ListTile(
+                              onTap: ()=> Get.toNamed(AppRoute.loanAccount, arguments: item.id),
                               leading: CircleAvatar(
                                 backgroundColor: AppColor.primaryColor,
                                 radius: 24.sp, // Size of the circle
@@ -231,6 +233,7 @@ class GroupScreen extends GetView<GroupController> {
                         return Card(
                           color: Colors.white,
                           child: ListTile(
+                            onTap: () => Get.toNamed(AppRoute.test, arguments: item.id),
                             leading: CircleAvatar(
                               backgroundColor: AppColor.primaryColor,
                               radius: 24.sp, // Size of the circle
