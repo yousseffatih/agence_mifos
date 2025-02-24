@@ -1,3 +1,7 @@
+// To parse this JSON data, do
+//
+//     final savingAccountClient = savingAccountClientFromJson(jsonString);
+
 import 'dart:convert';
 
 SavingAccountClient savingAccountClientFromJson(String str) => SavingAccountClient.fromJson(json.decode(str));
@@ -67,39 +71,39 @@ class SavingAccountClient {
         this.summary,
     });
 
-    factory SavingAccountClient.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return SavingAccountClient();
-        return SavingAccountClient(
-            id: json["id"] as int?,
-            accountNo: json["accountNo"] as String?,
-            depositType: json["depositType"] != null ? Type.fromJson(json["depositType"] as Map<String, dynamic>) : null,
-            clientId: json["clientId"] as int?,
-            clientName: json["clientName"] as String?,
-            savingsProductId: json["savingsProductId"] as int?,
-            savingsProductName: json["savingsProductName"] as String? ?? "",
-            fieldOfficerId: json["fieldOfficerId"] as int?,
-            fieldOfficerName: json["fieldOfficerName"] as String?,
-            status: json["status"] != null ? Status.fromJson(json["status"] as Map<String, dynamic>) : null,
-            subStatus: json["subStatus"] != null ? SubStatus.fromJson(json["subStatus"] as Map<String, dynamic>) : null,
-            timeline: json["timeline"] != null ? Timeline.fromJson(json["timeline"] as Map<String, dynamic>) : null,
-            currency: json["currency"] != null ? Currency.fromJson(json["currency"] as Map<String, dynamic>) : null,
-            nominalAnnualInterestRate: json["nominalAnnualInterestRate"] as double?,
-            interestCompoundingPeriodType: json["interestCompoundingPeriodType"] != null ? Type.fromJson(json["interestCompoundingPeriodType"] as Map<String, dynamic>) : null,
-            interestPostingPeriodType: json["interestPostingPeriodType"] != null ? Type.fromJson(json["interestPostingPeriodType"] as Map<String, dynamic>) : null,
-            interestCalculationType: json["interestCalculationType"] != null ? Type.fromJson(json["interestCalculationType"] as Map<String, dynamic>) : null,
-            interestCalculationDaysInYearType: json["interestCalculationDaysInYearType"] != null ? Type.fromJson(json["interestCalculationDaysInYearType"] as Map<String, dynamic>) : null,
-            lockinPeriodFrequency: json["lockinPeriodFrequency"] as int?,
-            lockinPeriodFrequencyType: json["lockinPeriodFrequencyType"] != null ? Type.fromJson(json["lockinPeriodFrequencyType"] as Map<String, dynamic>) : null,
-            withdrawalFeeForTransfers: json["withdrawalFeeForTransfers"] as bool?,
-            allowOverdraft: json["allowOverdraft"] as bool?,
-            minRequiredBalance: json["minRequiredBalance"] as double?,
-            enforceMinRequiredBalance: json["enforceMinRequiredBalance"] as bool?,
-            minBalanceForInterestCalculation: json["minBalanceForInterestCalculation"] as double?,
-            withHoldTax: json["withHoldTax"] as bool?,
-            taxGroup: json["taxGroup"] != null ? TaxGroup.fromJson(json["taxGroup"] as Map<String, dynamic>) : null,
-            isDormancyTrackingActive: json["isDormancyTrackingActive"] as bool?,
-            summary: json["summary"] != null ? Summary.fromJson(json["summary"] as Map<String, dynamic>) : null,
-        );
+    factory SavingAccountClient.fromJson(Map<String, dynamic> json) {
+      print("this is the error : ${json["savingsProductName"]}");
+      return SavingAccountClient(
+        id: json["id"],
+        accountNo: json["accountNo"],
+        depositType: json["depositType"] == null ? null : Type.fromJson(json["depositType"]),
+        clientId: json["clientId"],
+        clientName: json["clientName"],
+        savingsProductId: json["savingsProductId"],
+        savingsProductName: json["savingsProductName"],
+        fieldOfficerId: json["fieldOfficerId"],
+        fieldOfficerName: json["fieldOfficerName"],
+        status: json["status"] == null ? null : Status.fromJson(json["status"]),
+        subStatus: json["subStatus"] == null ? null : SubStatus.fromJson(json["subStatus"]),
+        timeline: json["timeline"] == null ? null : Timeline.fromJson(json["timeline"]),
+        currency: json["currency"] == null ? null : Currency.fromJson(json["currency"]),
+        nominalAnnualInterestRate: json["nominalAnnualInterestRate"],
+        interestCompoundingPeriodType: json["interestCompoundingPeriodType"] == null ? null : Type.fromJson(json["interestCompoundingPeriodType"]),
+        interestPostingPeriodType: json["interestPostingPeriodType"] == null ? null : Type.fromJson(json["interestPostingPeriodType"]),
+        interestCalculationType: json["interestCalculationType"] == null ? null : Type.fromJson(json["interestCalculationType"]),
+        interestCalculationDaysInYearType: json["interestCalculationDaysInYearType"] == null ? null : Type.fromJson(json["interestCalculationDaysInYearType"]),
+        lockinPeriodFrequency: json["lockinPeriodFrequency"],
+        lockinPeriodFrequencyType: json["lockinPeriodFrequencyType"] == null ? null : Type.fromJson(json["lockinPeriodFrequencyType"]),
+        withdrawalFeeForTransfers: json["withdrawalFeeForTransfers"],
+        allowOverdraft: json["allowOverdraft"],
+        minRequiredBalance: json["minRequiredBalance"],
+        enforceMinRequiredBalance: json["enforceMinRequiredBalance"],
+        minBalanceForInterestCalculation: json["minBalanceForInterestCalculation"],
+        withHoldTax: json["withHoldTax"],
+        taxGroup: json["taxGroup"] == null ? null : TaxGroup.fromJson(json["taxGroup"]),
+        isDormancyTrackingActive: json["isDormancyTrackingActive"],
+        summary: json["summary"] == null ? null : Summary.fromJson(json["summary"]),
+    );
     }
 
     Map<String, dynamic> toJson() => {
@@ -152,17 +156,14 @@ class Currency {
         this.displayLabel,
     });
 
-    factory Currency.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return Currency();
-        return Currency(
-            code: json["code"] as String?,
-            name: json["name"] as String?,
-            decimalPlaces: json["decimalPlaces"] as int?,
-            inMultiplesOf: json["inMultiplesOf"] as int?,
-            nameCode: json["nameCode"] as String?,
-            displayLabel: json["displayLabel"] as String?,
-        );
-    }
+    factory Currency.fromJson(Map<String, dynamic> json) => Currency(
+        code: json["code"],
+        name: json["name"],
+        decimalPlaces: json["decimalPlaces"],
+        inMultiplesOf: json["inMultiplesOf"],
+        nameCode: json["nameCode"],
+        displayLabel: json["displayLabel"],
+    );
 
     Map<String, dynamic> toJson() => {
         "code": code,
@@ -185,14 +186,11 @@ class Type {
         this.value,
     });
 
-    factory Type.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return Type();
-        return Type(
-            id: json["id"] as int?,
-            code: json["code"] as String?,
-            value: json["value"] as String?,
-        );
-    }
+    factory Type.fromJson(Map<String, dynamic> json) => Type(
+        id: json["id"],
+        code: json["code"],
+        value: json["value"],
+    );
 
     Map<String, dynamic> toJson() => {
         "id": id,
@@ -232,24 +230,21 @@ class Status {
         this.matured,
     });
 
-    factory Status.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return Status();
-        return Status(
-            id: json["id"] as int?,
-            code: json["code"] as String?,
-            value: json["value"] as String?,
-            submittedAndPendingApproval: json["submittedAndPendingApproval"] as bool?,
-            approved: json["approved"] as bool?,
-            rejected: json["rejected"] as bool?,
-            withdrawnByApplicant: json["withdrawnByApplicant"] as bool?,
-            active: json["active"] as bool?,
-            closed: json["closed"] as bool?,
-            prematureClosed: json["prematureClosed"] as bool?,
-            transferInProgress: json["transferInProgress"] as bool?,
-            transferOnHold: json["transferOnHold"] as bool?,
-            matured: json["matured"] as bool?,
-        );
-    }
+    factory Status.fromJson(Map<String, dynamic> json) => Status(
+        id: json["id"],
+        code: json["code"],
+        value: json["value"],
+        submittedAndPendingApproval: json["submittedAndPendingApproval"],
+        approved: json["approved"],
+        rejected: json["rejected"],
+        withdrawnByApplicant: json["withdrawnByApplicant"],
+        active: json["active"],
+        closed: json["closed"],
+        prematureClosed: json["prematureClosed"],
+        transferInProgress: json["transferInProgress"],
+        transferOnHold: json["transferOnHold"],
+        matured: json["matured"],
+    );
 
     Map<String, dynamic> toJson() => {
         "id": id,
@@ -293,21 +288,18 @@ class SubStatus {
         this.blockDebit,
     });
 
-    factory SubStatus.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return SubStatus();
-        return SubStatus(
-            id: json["id"] as int?,
-            code: json["code"] as String?,
-            value: json["value"] as String?,
-            none: json["none"] as bool?,
-            inactive: json["inactive"] as bool?,
-            dormant: json["dormant"] as bool?,
-            escheat: json["escheat"] as bool?,
-            block: json["block"] as bool?,
-            blockCredit: json["blockCredit"] as bool?,
-            blockDebit: json["blockDebit"] as bool?,
-        );
-    }
+    factory SubStatus.fromJson(Map<String, dynamic> json) => SubStatus(
+        id: json["id"],
+        code: json["code"],
+        value: json["value"],
+        none: json["none"],
+        inactive: json["inactive"],
+        dormant: json["dormant"],
+        escheat: json["escheat"],
+        block: json["block"],
+        blockCredit: json["blockCredit"],
+        blockDebit: json["blockDebit"],
+    );
 
     Map<String, dynamic> toJson() => {
         "id": id,
@@ -340,17 +332,14 @@ class Summary {
         this.availableBalance,
     });
 
-    factory Summary.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return Summary();
-        return Summary(
-            currency: json["currency"] != null ? Currency.fromJson(json["currency"] as Map<String, dynamic>) : null,
-            totalInterestPosted: json["totalInterestPosted"] as int?,
-            accountBalance: json["accountBalance"] as double?,
-            totalOverdraftInterestDerived: json["totalOverdraftInterestDerived"] as int?,
-            interestNotPosted: json["interestNotPosted"] as int?,
-            availableBalance: json["availableBalance"] as double?,
-        );
-    }
+    factory Summary.fromJson(Map<String, dynamic> json) => Summary(
+        currency: json["currency"] == null ? null : Currency.fromJson(json["currency"]),
+        totalInterestPosted: json["totalInterestPosted"],
+        accountBalance: json["accountBalance"],
+        totalOverdraftInterestDerived: json["totalOverdraftInterestDerived"],
+        interestNotPosted: json["interestNotPosted"],
+        availableBalance: json["availableBalance"],
+    );
 
     Map<String, dynamic> toJson() => {
         "currency": currency?.toJson(),
@@ -371,13 +360,10 @@ class TaxGroup {
         this.name,
     });
 
-    factory TaxGroup.fromJson(Map<String, dynamic>? json) {
-        if (json == null) return TaxGroup();
-        return TaxGroup(
-            id: json["id"] as int?,
-            name: json["name"] as String?,
-        );
-    }
+    factory TaxGroup.fromJson(Map<String, dynamic> json) => TaxGroup(
+        id: json["id"],
+        name: json["name"],
+    );
 
     Map<String, dynamic> toJson() => {
         "id": id,

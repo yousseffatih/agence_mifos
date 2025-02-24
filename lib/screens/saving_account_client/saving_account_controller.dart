@@ -60,6 +60,7 @@ class SavingAccountController extends GetxController {
       SnackbarUtils.showError(failure.message);
     }, (data) {
       SnackbarUtils.showSuccess(data.toString());
+      savingAccountClient.value = data;
     });
     isLoding.value = false;
   }
