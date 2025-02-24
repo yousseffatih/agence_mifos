@@ -1,8 +1,8 @@
-import 'package:agence_mifos/data/saving_account/saving_account_provider.dart';
-import 'package:agence_mifos/model/saving_account_client.model.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../data/saving_account/saving_account_provider.dart';
 import '../../failuer/failuers.dart';
+import '../../model/saving_account_client.model.dart';
 
 class SavingAccountRepository {
   final SavingAccountProvider savingAccountProvider;
