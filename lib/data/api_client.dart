@@ -1,7 +1,8 @@
+import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:get_storage/get_storage.dart';
-
 
 class ApiClient {
   static final ApiClient _instance = ApiClient._internal();
@@ -14,9 +15,18 @@ class ApiClient {
 
   ApiClient._internal() {
     dio = Dio(BaseOptions(
-      baseUrl: 'https://dev.mifos.io/fineract-provider/api/v1', // Your API base URL
+      baseUrl:
+          'https://dev.mifos.io/fineract-provider/api/v1', // Your API base URL
       headers: {'Content-Type': 'application/json'},
     ));
+
+    // ignore: deprecated_member_use
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
 
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) {

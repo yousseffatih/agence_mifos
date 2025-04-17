@@ -7,12 +7,12 @@ import 'package:get/get.dart';
 class AuthMiddleware extends GetMiddleware {
   StorageService storageService = StorageService();
   User? value;
-  
+
   @override
   RouteSettings? redirect(String? route) {
     value = storageService.getUser();
-    if (value != null ) {
-      return  const RouteSettings(name: AppRoute.home);
+    if (value != null) {
+      return const RouteSettings(name: AppRoute.home);
     } else {
       return null;
     }
